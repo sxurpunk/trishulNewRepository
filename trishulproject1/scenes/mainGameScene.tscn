@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://cjj2okqnbs87b"]
+
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_0okat"]
+[ext_resource type="Script" path="res://scripts/damageTest.gd" id="3_fjpl4"]
+[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="3_tu3m6"]
+[ext_resource type="PackedScene" uid="uid://cnssd75uvdgh" path="res://scenes/combatPlayerScene.tscn" id="5_0jiw1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3m3nq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_peaf8"]
+sky_material = SubResource("ProceduralSkyMaterial_3m3nq")
+
+[sub_resource type="Environment" id="Environment_7dxee"]
+background_mode = 2
+sky = SubResource("Sky_peaf8")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g437q"]
+albedo_texture = ExtResource("1_0okat")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vct2d"]
+albedo_texture = ExtResource("3_tu3m6")
+uv1_triplanar = true
+
+[sub_resource type="Animation" id="Animation_1ryij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3ryrc"]
+resource_name = "takeHit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0), Vector3(3.14159, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jfy4w"]
+_data = {
+"RESET": SubResource("Animation_1ryij"),
+"takeHit": SubResource("Animation_3ryrc")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qtdi"]
+size = Vector3(2.09857, 2.32819, 2.13861)
+
+[node name="gameSpace" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7dxee")
+
+[node name="gameMap" type="Node3D" parent="."]
+
+[node name="gameFloor" type="CSGBox3D" parent="gameMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_g437q")
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="boxMid" type="CSGBox3D" parent="gameMap"]
+transform = Transform3D(0.432813, 0, 0, 0, 1, 0, 0, 0, 0.347071, 0, 0.917155, -8.29281)
+material_override = SubResource("StandardMaterial3D_vct2d")
+use_collision = true
+size = Vector3(2, 2, 2)
+script = ExtResource("3_fjpl4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="gameMap/boxMid"]
+libraries = {
+"": SubResource("AnimationLibrary_jfy4w")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gameMap/boxMid"]
+transform = Transform3D(1.00004, 0, 0, 0, 1, 0, 0, 0, 1, -0.00839419, -0.120026, -0.0196209)
+shape = SubResource("BoxShape3D_7qtdi")
+
+[node name="PlayerScene" parent="." instance=ExtResource("5_0jiw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0349455, 0, -0.216586)

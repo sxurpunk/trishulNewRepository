@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bip7l4c02oqoa"]
+
+[ext_resource type="Texture2D" uid="uid://lhh3e17yfe62" path="res://TutorialCave/textures/dirtTexture.png" id="1_qgqum"]
+
+[resource]
+shading_mode = 2
+albedo_texture = ExtResource("1_qgqum")
+texture_filter = 0
