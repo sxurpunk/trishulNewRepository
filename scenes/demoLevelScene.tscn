@@ -233,7 +233,7 @@ mesh = SubResource("ArrayMesh_j05wd")
 skeleton = NodePath("")
 
 [node name="PlayerScene" parent="." instance=ExtResource("2_opin6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262904, 0.252153, -0.0410513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262904, 0.0983777, -0.0410513)
 
 [node name="Cube" parent="PlayerScene/visuals/evenFasterCombatTrishul/Armature/Skeleton3D" index="0"]
 transform = Transform3D(1, -9.60945e-08, -3.85444e-08, 1.05103e-07, 0.968649, 0.248432, 1.44646e-08, -0.248432, 0.968649, -0.00256355, 5.22005, -1.13238)
