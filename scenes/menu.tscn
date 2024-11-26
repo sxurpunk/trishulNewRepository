@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxite1l2wmd3o"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_0lujy"]
+[ext_resource type="AudioStream" uid="uid://b7apoph7jryyq" path="res://Sound/Simple Rap Beat, Hip Hop Instrumental, Freestyle Beat.mp3" id="2_ahxi8"]
+[ext_resource type="AudioStream" uid="uid://d0tt8g1kv3y2e" path="res://Sound/jacket-button-press.mp3" id="3_5w6xj"]
+[ext_resource type="AudioStream" uid="uid://ufn2qm8wwxgv" path="res://Sound/click-21156.mp3" id="4_gfwsd"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0lujy")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 269.0
+offset_top = 147.0
+offset_right = 724.0
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 2
+text = "Main Menu"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "Setting"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Settings" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.0
+offset_right = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 2
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Settings"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="Settings"]
+layout_mode = 2
+min_value = -45.0
+max_value = 0.0
+
+[node name="Label3" type="Label" parent="Settings"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="Settings"]
+layout_mode = 2
+min_value = -45.0
+max_value = 0.0
+
+[node name="Label4" type="Label" parent="Settings"]
+layout_mode = 2
+text = "FX Volume"
+
+[node name="FXSlider" type="HSlider" parent="Settings"]
+layout_mode = 2
+min_value = -45.0
+max_value = 0.0
+
+[node name="Label5" type="Label" parent="Settings"]
+layout_mode = 2
+text = "Brightness"
+
+[node name="BrightnessSlider" type="HSlider" parent="Settings"]
+layout_mode = 2
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 1.0
+
+[node name="Button" type="Button" parent="Settings"]
+layout_mode = 2
+text = "Back"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_ahxi8")
+autoplay = true
+bus = &"Music"
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5w6xj")
+bus = &"FX"
+
+[node name="Focus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gfwsd")
+
+[connection signal="mouse_entered" from="MainMenu/Play" to="." method="FocusEntered"]
+[connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="MainMenu/Settings" to="." method="FocusEntered"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="MainMenu/Quit" to="." method="FocusEntered"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Settings/MasterSlider" to="." method="FocusEntered"]
+[connection signal="value_changed" from="Settings/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="mouse_entered" from="Settings/MusicSlider" to="." method="FocusEntered"]
+[connection signal="value_changed" from="Settings/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="mouse_entered" from="Settings/FXSlider" to="." method="FocusEntered"]
+[connection signal="value_changed" from="Settings/FXSlider" to="." method="_on_fx_slider_value_changed"]
+[connection signal="value_changed" from="Settings/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
+[connection signal="mouse_entered" from="Settings/Button" to="." method="FocusEntered"]
+[connection signal="pressed" from="Settings/Button" to="." method="_on_button_pressed"]

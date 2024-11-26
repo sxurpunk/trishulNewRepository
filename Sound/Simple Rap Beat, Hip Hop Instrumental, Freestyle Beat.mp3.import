@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7apoph7jryyq"
+path="res://.godot/imported/Simple Rap Beat, Hip Hop Instrumental, Freestyle Beat.mp3-737caf85bf62a384c0d3ba45d04714a3.mp3str"
+
+[deps]
+
+source_file="res://Sound/Simple Rap Beat, Hip Hop Instrumental, Freestyle Beat.mp3"
+dest_files=["res://.godot/imported/Simple Rap Beat, Hip Hop Instrumental, Freestyle Beat.mp3-737caf85bf62a384c0d3ba45d04714a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
