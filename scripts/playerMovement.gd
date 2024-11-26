@@ -3,7 +3,9 @@ extends CharacterBody3D
 @onready var camera_holder: Node3D = $cameraHolder
 @onready var animation_player: AnimationPlayer = $visuals/finalCombatTrishulAnimations/AnimationPlayer
 @onready var visuals: Node3D = $visuals
+@onready var healthbar = $CanvasLayer/Healthbar
 
+var health = 0
 var SPEED = 5.0
 const JUMP_VELOCITY = 3
 
@@ -29,6 +31,9 @@ enum playerStates {MOVE, JUMP, ATTACK}
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	health = 100
+	healthbar.init_health(health)
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -164,3 +169,9 @@ func readyForInput():
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.has_method("hurt"):
 		body.hurt()
+
+func _set_health(value):
+	if health <= 0:
+		$".".queue_free()
+	
+	healthbar.health = health
