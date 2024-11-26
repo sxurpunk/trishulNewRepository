@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpwp8h8g57hvs"
-path="res://.godot/imported/finalCombatTrishul.glb-9b0282f84d2ee5baeea9ae3cb9d044a7.scn"
+uid="uid://bhhuo4ayma75h"
+path="res://.godot/imported/finalCombatTrishulAnimations.glb-2a73033502a541873978e1dcc47fe6e4.scn"
 
 [deps]
 
-source_file="res://animations/finalCombatTrishul.glb"
-dest_files=["res://.godot/imported/finalCombatTrishul.glb-9b0282f84d2ee5baeea9ae3cb9d044a7.scn"]
+source_file="res://animations/finalCombatTrishulAnimations.glb"
+dest_files=["res://.godot/imported/finalCombatTrishulAnimations.glb-2a73033502a541873978e1dcc47fe6e4.scn"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var camera_holder: Node3D = $cameraHolder
-@onready var animation_player: AnimationPlayer = $visuals/finalCombatTrishul/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $visuals/finalCombatTrishulAnimations/AnimationPlayer
 @onready var visuals: Node3D = $visuals
 
 var SPEED = 5.0
@@ -123,10 +123,6 @@ func move(_delta):
 #				animation_player.play("jump")
 #			direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	#		move_and_slide()
-
-	if Input.is_action_just_pressed("die"):
-			animation_player.play("death")
-			isLocked = true
 
 	if attacks == 1 && Input.is_action_just_pressed("playerAttack") && is_on_floor():
 			if animation_player.current_animation != "attack1":

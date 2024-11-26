@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b73ex7fvwdfx0"
-path.s3tc="res://.godot/imported/finalCombatTrishul_tridentTexture.png-ea39de86d8b244a4bf3d1c9a35562d20.s3tc.ctex"
+uid="uid://bvs2v22u4700b"
+path.s3tc="res://.godot/imported/finalCombatTrishulAnimations_tridentTexture.png-13f697d492603b1db689f949bbbd314d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://animations/finalCombatTrishul_tridentTexture.png"
-dest_files=["res://.godot/imported/finalCombatTrishul_tridentTexture.png-ea39de86d8b244a4bf3d1c9a35562d20.s3tc.ctex"]
+source_file="res://animations/finalCombatTrishulAnimations_tridentTexture.png"
+dest_files=["res://.godot/imported/finalCombatTrishulAnimations_tridentTexture.png-13f697d492603b1db689f949bbbd314d.s3tc.ctex"]
 
 [params]
 
