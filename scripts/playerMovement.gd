@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 @onready var camera_holder: Node3D = $cameraHolder
-@onready var animation_player: AnimationPlayer = $visuals/evenFasterCombatTrishul/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $visuals/finalCombatTrishul/AnimationPlayer
 @onready var visuals: Node3D = $visuals
 
 var SPEED = 5.0
 const JUMP_VELOCITY = 3
 
 @export var walkSpeed = 5.0
-@export var runSpeed = 8.0
+@export var runSpeed = 10.0
 
 var can_input = true
 
@@ -79,7 +79,7 @@ func move(_delta):
 						animation_player.play("run")
 				else:
 					if animation_player.current_animation != "walking":
-						animation_player.play("walk")
+						animation_player.play("updatedwalk")
 						
 				visuals.look_at(position + direction)
 				
@@ -133,12 +133,23 @@ func move(_delta):
 				animation_player.play("attack2")
 				isLocked = true
 				attacks += 1
+	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
+				animation_player.play("heavyAttack1")
+				isLocked = true
+				attacks += 1
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack3")
 				isLocked = true
 				attacks += 1
+	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
+				animation_player.play("heavyAttack2")
+				isLocked = true
+				attacks += 1
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack4")
+				isLocked = true
+	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
+				animation_player.play("heavyAttack3")
 				isLocked = true
 
 func resetState():

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxee8if15umdr"
-path.s3tc="res://.godot/imported/fastCombattrishul_tridentTexture.png-c562b10274afae1aadb1bcb0a16da3f8.s3tc.ctex"
+uid="uid://nimjpi20kvqp"
+path.s3tc="res://.godot/imported/finalCombatTrishul_bare-metal-and-plates_0090_01_thr.jpg-a0fe56b6b61d5adcdd8dbe612baf9f74.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "383c76d0ac5581abc01e2569546ae227"
+"md5": "5fd1b62ea6a7629b4a5ad3fd0ff3a15b"
 }
 
 [deps]
 
-source_file="res://animations/fastCombattrishul_tridentTexture.png"
-dest_files=["res://.godot/imported/fastCombattrishul_tridentTexture.png-c562b10274afae1aadb1bcb0a16da3f8.s3tc.ctex"]
+source_file="res://animations/finalCombatTrishul_bare-metal-and-plates_0090_01_thr.jpg"
+dest_files=["res://.godot/imported/finalCombatTrishul_bare-metal-and-plates_0090_01_thr.jpg-a0fe56b6b61d5adcdd8dbe612baf9f74.s3tc.ctex"]
 
 [params]
 
