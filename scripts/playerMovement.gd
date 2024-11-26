@@ -124,6 +124,10 @@ func move(_delta):
 #			direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	#		move_and_slide()
 
+	if Input.is_action_just_pressed("die"):
+			animation_player.play("death")
+			isLocked = true
+
 	if attacks == 1 && Input.is_action_just_pressed("playerAttack") && is_on_floor():
 			if animation_player.current_animation != "attack1":
 				animation_player.play("attack1")
