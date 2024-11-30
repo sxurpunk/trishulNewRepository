@@ -239,79 +239,79 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262904, 0.0983777, -0.772797)
 
 [node name="Cube" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.972932, -0.109183, 0.20367, 0.0854264, 0.988845, 0.122017, -0.214721, -0.101316, 0.971406, -0.436682, 4.40265, -1.18442)
+transform = Transform3D(0.811199, 0.315237, 0.492525, -0.11085, 0.909879, -0.39979, -0.574167, 0.269713, 0.773037, 1.15675, 4.08403, -1.08568)
 
 [node name="Cube_021" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.972932, -0.109183, 0.20367, 0.0854264, 0.988845, 0.122017, -0.214721, -0.101316, 0.971406, -0.254698, 4.43752, -0.328923)
+transform = Transform3D(0.811199, 0.315237, 0.492525, -0.11085, 0.909879, -0.39979, -0.574167, 0.269713, 0.773037, 1.56072, 3.67011, -0.428662)
 
 [node name="Cube_022" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.972932, -0.109183, 0.20367, 0.0854264, 0.988845, 0.122017, -0.214721, -0.101316, 0.971406, 0.0690059, 4.51101, -1.32266)
+transform = Transform3D(0.811199, 0.315237, 0.492525, -0.11085, 0.909879, -0.39979, -0.574167, 0.269713, 0.773037, 1.59933, 4.0924, -1.38672)
 
 [node name="Cube_023" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.972932, -0.109183, 0.20367, 0.0854264, 0.988845, 0.122017, -0.214721, -0.101316, 0.971406, -0.932136, 4.4287, -1.10242)
+transform = Transform3D(0.811199, 0.315237, 0.492525, -0.11085, 0.909879, -0.39979, -0.574167, 0.269713, 0.773037, 0.766889, 4.2115, -0.794752)
 
 [node name="Cube_002" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="4"]
-transform = Transform3D(0.920078, -0.0599832, 0.387115, -0.0178464, 0.980763, 0.194385, -0.391328, -0.185758, 0.901308, -0.40131, 3.49722, -1.20941)
+transform = Transform3D(0.103332, 0.321413, 0.941284, -0.0954441, 0.945187, -0.312268, -0.990057, -0.0575725, 0.128346, 0.749568, 3.31286, -1.27882)
 
 [node name="Cube_007" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="5"]
-transform = Transform3D(0.388447, 0.894257, 0.222294, -0.904975, 0.324783, 0.27484, 0.17358, -0.307931, 0.93544, 1.81627, -1.25835, -1.88007)
+transform = Transform3D(0.170237, 0.748792, 0.64057, -0.892419, 0.392811, -0.222007, -0.41786, -0.533863, 0.735108, -0.821027, -0.170135, -3.60544)
 
 [node name="Cube_006" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="6"]
-transform = Transform3D(0.404173, 0.425441, 0.809718, -0.909877, 0.0963817, 0.403527, 0.0936349, -0.899839, 0.426054, 1.27542, -0.13132, -2.08166)
+transform = Transform3D(0.171599, 0.601992, 0.779846, -0.883145, 0.444799, -0.149028, -0.436588, -0.663144, 0.607973, -1.14793, 0.957382, -3.09971)
 
 [node name="Cube_005" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="7"]
-transform = Transform3D(0.147356, -0.212872, 0.965904, -0.951706, 0.23541, 0.197071, -0.269335, -0.948297, -0.167903, 0.775766, 1.48338, -1.85815)
+transform = Transform3D(-0.908034, -0.169074, 0.38326, -0.387073, 0.688449, -0.613361, -0.160152, -0.705302, -0.690579, -0.535979, 2.05006, -2.49189)
 
 [node name="Icosphere_001" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="8"]
-transform = Transform3D(0.147356, -0.212872, 0.965904, -0.951706, 0.23541, 0.197071, -0.269335, -0.948297, -0.167903, 0.571557, 2.75832, -1.47585)
+transform = Transform3D(-0.908034, -0.169074, 0.38326, -0.387073, 0.688449, -0.613361, -0.160152, -0.705302, -0.690579, 0.685916, 2.56444, -2.25588)
 
 [node name="Cube_009" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="9"]
-transform = Transform3D(0.281832, -0.95771, 0.0579969, 0.956732, 0.275958, -0.0922589, 0.0723523, 0.081489, 0.994044, -2.83601, -0.995487, -0.316696)
+transform = Transform3D(0.473021, -0.00634131, 0.881028, 0.815549, 0.381513, -0.43512, -0.333364, 0.924342, 0.185635, 0.710563, -0.389163, 2.0458)
 
 [node name="Trident" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="10"]
-transform = Transform3D(0.0178357, 0.177969, -0.185299, -0.184351, -0.452022, -0.0185593, -0.0202443, 4.27302, 0.00575431, -2.86476, -0.933941, -0.924598)
+transform = Transform3D(-0.0831362, 3.75314, -0.0369207, -0.166586, -1.91026, 0.0106391, -0.00711492, 0.871551, 0.18231, 0.174949, -0.119403, 1.92536)
 
 [node name="Cube_015" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="11"]
-transform = Transform3D(0.150316, -0.776912, 0.611403, 0.948001, 0.288752, 0.133848, -0.280532, 0.559491, 0.779917, -2.59227, 0.0484441, -0.649531)
+transform = Transform3D(-0.0357178, 0.831176, 0.55486, 0.995793, 0.0764766, -0.0504598, -0.0843751, 0.550724, -0.830412, 0.654831, 0.711376, 1.83684)
 
 [node name="Cube_016" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="12"]
-transform = Transform3D(0.461923, -0.653422, 0.599722, 0.882975, 0.275094, -0.380366, 0.0835598, 0.70524, 0.704027, -2.00984, 1.625, -0.860126)
+transform = Transform3D(-0.0898078, 0.476375, 0.874643, 0.524788, 0.769024, -0.364964, -0.846482, 0.426226, -0.31906, 0.493951, 2.0221, 0.990662)
 
 [node name="Icosphere" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="13"]
-transform = Transform3D(0.461923, -0.653422, 0.599722, 0.882975, 0.275094, -0.380366, 0.0835598, 0.70524, 0.704027, -1.38297, 2.80999, -0.768371)
+transform = Transform3D(-0.0898078, 0.476375, 0.874643, 0.524788, 0.769024, -0.364964, -0.846482, 0.426226, -0.31906, 0.35537, 2.71635, -0.151451)
 
 [node name="Cube_001" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="14"]
-transform = Transform3D(0.920073, 0.0164116, 0.391403, -0.0181509, 0.999835, 0.000744149, -0.391326, -0.00778899, 0.920219, -0.392498, 2.26435, -1.09766)
+transform = Transform3D(0.1032, 0.369041, 0.923666, -0.0957179, 0.927999, -0.360078, -0.990044, -0.0512515, 0.131093, 0.354978, 2.14456, -1.19362)
 
 [node name="Cube_004" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="15"]
-transform = Transform3D(0.920073, 0.0310898, 0.390511, -0.0181509, 0.999159, -0.0367812, -0.391326, 0.0267533, 0.919863, -0.363128, 0.557064, -0.976436)
+transform = Transform3D(0.1032, 0.381391, 0.918635, -0.0957179, 0.923088, -0.372487, -0.990044, -0.0494894, 0.131768, -0.145519, 0.505645, -1.09802)
 
 [node name="Cube_010" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="16"]
-transform = Transform3D(0.913264, -0.0958151, 0.39594, 0.105137, 0.994456, -0.00185023, -0.393568, 0.0433168, 0.918274, 1.45741, -6.42863, -1.53611)
+transform = Transform3D(-0.20785, 0.292694, 0.933343, 0.160834, 0.951421, -0.262547, -0.964848, 0.0955423, -0.244827, 0.638133, -5.86262, -3.52717)
 
 [node name="Cube_018" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="17"]
-transform = Transform3D(0.918378, -0.0391897, 0.393758, 0.0734546, 0.994673, -0.0723213, -0.388826, 0.0953411, 0.916365, 1.03028, -4.89092, -1.60671)
+transform = Transform3D(-0.132581, 0.303783, 0.943471, 0.313582, 0.915836, -0.250819, -0.94026, 0.262603, -0.216683, 0.831038, -4.41026, -2.81492)
 
 [node name="Cube_017" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="18"]
-transform = Transform3D(0.914222, 0.0252101, 0.404428, -0.0083319, 0.999021, -0.0434353, -0.405127, 0.036339, 0.913538, 0.487269, -2.41828, -1.21442)
+transform = Transform3D(-0.138708, -0.521308, 0.84202, 0.0265191, 0.847979, 0.529366, -0.989978, 0.0957552, -0.103797, 0.624119, -2.29609, -1.81353)
 
 [node name="Cube_019" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="19"]
-transform = Transform3D(0.96283, -0.00487173, 0.270063, -0.0432911, 0.984129, 0.172095, -0.266616, -0.17739, 0.947338, -1.15906, -6.28523, 0.891635)
+transform = Transform3D(0.532401, 0.0493752, 0.845051, -0.138861, 0.989868, 0.0296489, -0.835025, -0.13313, 0.533863, -0.47981, -5.9278, 1.17932)
 
 [node name="Cube_011" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="20"]
-transform = Transform3D(0.957681, -0.113423, 0.264543, 0.102531, 0.993226, 0.0546722, -0.268952, -0.0252347, 0.962823, -1.17632, -4.77024, 0.450603)
+transform = Transform3D(0.55973, 0.18793, 0.807084, -0.00969599, 0.975364, -0.220389, -0.828618, 0.115533, 0.547763, -0.346358, -4.43391, 0.948014)
 
 [node name="Cube_012" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="21"]
-transform = Transform3D(0.955142, -0.198491, 0.219783, 0.104517, 0.920319, 0.376947, -0.277091, -0.337067, 0.899781, -1.00833, -2.32279, -0.158447)
+transform = Transform3D(0.53148, -0.411095, 0.740628, -0.0012088, 0.873971, 0.485976, -0.84707, -0.259182, 0.464001, -0.30427, -2.1299, 0.283099)
 
 [node name="Cube_003" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="22"]
-transform = Transform3D(0.962284, -0.00207958, 0.272038, -0.0204607, 0.996585, 0.0799942, -0.271275, -0.0825433, 0.958956, -0.541212, -0.672729, -0.91506)
+transform = Transform3D(0.528619, 0.0174195, 0.84868, -0.171973, 0.981254, 0.0869769, -0.831256, -0.191928, 0.521706, -0.485794, -0.650762, -0.827671)
 
 [node name="Cube_020" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="23"]
-transform = Transform3D(0.962284, -0.00207958, 0.272038, -0.0204607, 0.996585, 0.0799942, -0.271275, -0.0825433, 0.958956, -0.392511, -0.250504, -1.01598)
+transform = Transform3D(0.528619, 0.0174195, 0.84868, -0.171973, 0.981254, 0.0869769, -0.831256, -0.191928, 0.521706, -0.411914, -0.259788, -1.05626)
 
 [node name="tridentBone" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="24"]
-transform = Transform3D(0.0178357, 0.177969, -0.185299, -0.184351, -0.452022, -0.0185593, -0.0202443, 4.27302, 0.00575431, -2.86476, -0.933941, -0.924598)
+transform = Transform3D(-0.0831362, 3.75314, -0.0369207, -0.166586, -1.91026, 0.0106391, -0.00711492, 0.871551, 0.18231, 0.174949, -0.119403, 1.92536)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerScene"]
 

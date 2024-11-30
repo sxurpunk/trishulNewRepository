@@ -141,7 +141,7 @@ func move(_delta):
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack1")
 				isLocked = true
-				attacks == 1
+				resetAttack()
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack3")
 				isLocked = true
@@ -149,14 +149,14 @@ func move(_delta):
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack2")
 				isLocked = true
-				attacks == 1
+				resetAttack()
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack4")
 				isLocked = true
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack3")
 				isLocked = true
-				attacks == 1
+				resetAttack()
 
 func resetState():
 	currentState = playerStates.MOVE
