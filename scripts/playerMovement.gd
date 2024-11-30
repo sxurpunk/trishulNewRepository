@@ -12,7 +12,7 @@ const JUMP_VELOCITY = 3
 @export var walkSpeed = 5.0
 @export var runSpeed = 10.0
 
-var can_input = true
+var can_attack = true
 
 var isRunning = false
 
@@ -141,7 +141,7 @@ func move(_delta):
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack1")
 				isLocked = true
-				attacks += 1
+				attacks == 1
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack3")
 				isLocked = true
@@ -149,13 +149,14 @@ func move(_delta):
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack2")
 				isLocked = true
-				attacks += 1
+				attacks == 1
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack4")
 				isLocked = true
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack3")
 				isLocked = true
+				attacks == 1
 
 func resetState():
 	currentState = playerStates.MOVE
@@ -164,7 +165,7 @@ func resetAttack():
 	attacks = 1
 
 func readyForInput():
-	can_input = true
+	can_attack = true
 
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.has_method("hurt"):
