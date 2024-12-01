@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fvdmvswtn32m"
+path="res://.godot/imported/Dark Cave Music - Royalty Free Music   Underground Network.mp3-8d4b07eb620d31e932ed415a026687ba.mp3str"
+
+[deps]
+
+source_file="res://audio/Dark Cave Music - Royalty Free Music   Underground Network.mp3"
+dest_files=["res://.godot/imported/Dark Cave Music - Royalty Free Music   Underground Network.mp3-8d4b07eb620d31e932ed415a026687ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

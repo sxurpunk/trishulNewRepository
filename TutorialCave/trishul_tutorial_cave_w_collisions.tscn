@@ -270,7 +270,12 @@ mesh = ExtResource("6_tp832")
 shape = SubResource("ConcavePolygonShape3D_seuqn")
 
 [node name="PlayerScene" parent="." instance=ExtResource("7_3kqst")]
-transform = Transform3D(6.00023, 0, 0, 0, 6.00023, 0, 0, 0, 6.00023, 0.332273, 0.0980272, -89.3686)
+transform = Transform3D(-2.62278e-07, 0, 6.00023, 0, 6.00023, 0, -6.00023, 0, -2.62278e-07, -87.5124, 26.9138, -164.042)
 walkSpeed = 5.0
 
+[node name="cameraHolder" parent="PlayerScene" index="2"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 1.4, 0.550818)
+
 [editable path="TrishulTutorialCave"]
+[editable path="PlayerScene"]
+[editable path="PlayerScene/visuals/trsihulInjured"]

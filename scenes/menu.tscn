@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxite1l2wmd3o"]
+[gd_scene load_steps=6 format=3 uid="uid://bxite1l2wmd3o"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_0lujy"]
-[ext_resource type="AudioStream" uid="uid://b7apoph7jryyq" path="res://Sound/Simple Rap Beat, Hip Hop Instrumental, Freestyle Beat.mp3" id="2_ahxi8"]
-[ext_resource type="AudioStream" uid="uid://d0tt8g1kv3y2e" path="res://Sound/jacket-button-press.mp3" id="3_5w6xj"]
+[ext_resource type="Texture2D" uid="uid://cmjownbsvtw8l" path="res://ui assets/trishullOGO.png" id="2_q800x"]
+[ext_resource type="AudioStream" uid="uid://fvdmvswtn32m" path="res://audio/Dark Cave Music - Royalty Free Music   Underground Network.mp3" id="3_6bj71"]
 [ext_resource type="AudioStream" uid="uid://ufn2qm8wwxgv" path="res://Sound/click-21156.mp3" id="4_gfwsd"]
+[ext_resource type="AudioStream" uid="uid://bmoeu2qcuqumm" path="res://audio/Menu Selection Click.mp3" id="4_y7wd4"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,16 +18,16 @@ script = ExtResource("1_0lujy")
 [node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 269.0
-offset_top = 147.0
+offset_top = 376.0
 offset_right = 724.0
-offset_bottom = 370.0
+offset_bottom = 599.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="MainMenu"]
-layout_mode = 2
-text = "Main Menu"
-horizontal_alignment = 1
+[node name="TrishullOgo" type="Sprite2D" parent="MainMenu"]
+position = Vector2(229, -128)
+scale = Vector2(0.140323, 0.140323)
+texture = ExtResource("2_q800x")
 
 [node name="Play" type="Button" parent="MainMenu"]
 layout_mode = 2
@@ -34,7 +35,7 @@ text = "Play"
 
 [node name="Settings" type="Button" parent="MainMenu"]
 layout_mode = 2
-text = "Setting"
+text = "Settings"
 
 [node name="Quit" type="Button" parent="MainMenu"]
 layout_mode = 2
@@ -104,12 +105,12 @@ text = "Back"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("2_ahxi8")
-autoplay = true
+stream = ExtResource("3_6bj71")
+volume_db = -5.056
 bus = &"Music"
 
 [node name="ButtonPress" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_5w6xj")
+stream = ExtResource("4_y7wd4")
 bus = &"FX"
 
 [node name="Focus" type="AudioStreamPlayer" parent="."]

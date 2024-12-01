@@ -11,6 +11,8 @@ const JUMP_VELOCITY = 3
 
 @export var walkSpeed = 5.0
 @export var runSpeed = 10.0
+@onready var walking_sound: AudioStreamPlayer3D = $walkingSound
+@onready var attack_sound_1: AudioStreamPlayer3D = $attackSound1
 
 var can_attack = true
 
@@ -85,7 +87,6 @@ func move(_delta):
 				else:
 					if animation_player.current_animation != "walking":
 						animation_player.play("updatedwalk")
-						
 				visuals.look_at(position + direction)
 				
 			velocity.x = direction.x * SPEED
@@ -132,10 +133,12 @@ func move(_delta):
 	if attacks == 1 && Input.is_action_just_pressed("playerAttack") && is_on_floor():
 			if animation_player.current_animation != "attack1":
 				animation_player.play("attack1")
+				$attackSound1.play()
 				isLocked = true
 				attacks += 1
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack2")
+				$attackSound1.play()
 				isLocked = true
 				attacks += 1
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
@@ -144,6 +147,7 @@ func move(_delta):
 				resetAttack()
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack3")
+				$attackSound1.play()
 				isLocked = true
 				attacks += 1
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
@@ -152,6 +156,7 @@ func move(_delta):
 				resetAttack()
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack4")
+				$attackSound1.play()
 				isLocked = true
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack3")
@@ -167,12 +172,15 @@ func resetAttack():
 func readyForInput():
 	can_attack = true
 
+func playAttackSound():
+	$attackSound1.play()
+
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.has_method("hurt"):
 		body.hurt()
 
-func _set_health(value):
-	if health <= 0:
-		$".".queue_free()
-	
-	healthbar.health = health
+	#func _set_health(value):
+#		if health <= 0:
+#			$".".queue_free()
+#		
+#		healthbar.health = health
