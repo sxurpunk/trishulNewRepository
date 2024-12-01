@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8edlc208ud0j"]
+
+[ext_resource type="Texture2D" uid="uid://cffjc6eboricq" path="res://dungeonLevel/dungeon-Environment_dungeonBrick.png" id="1_2wkn2"]
+
+[resource]
+albedo_texture = ExtResource("1_2wkn2")
+metallic_specular = 0.0
+texture_filter = 0
