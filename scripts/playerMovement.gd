@@ -1,16 +1,17 @@
+class_name Player
 extends CharacterBody3D
 
 @onready var camera_holder: Node3D = $cameraHolder
 @onready var animation_player: AnimationPlayer = $visuals/finalCombatTrishulAnimations/AnimationPlayer
 @onready var visuals: Node3D = $visuals
-@onready var healthbar = $CanvasLayer/Healthbar
+# @onready var healthbar = $CanvasLayer/Healthbar
 
 var health = 0
 var SPEED = 5.0
 const JUMP_VELOCITY = 3
 
-@export var walkSpeed = 5.0
-@export var runSpeed = 10.0
+@export var walkSpeed = 6.0
+@export var runSpeed = 12.0
 @onready var walking_sound: AudioStreamPlayer3D = $walkingSound
 @onready var attack_sound_1: AudioStreamPlayer3D = $attackSound1
 
@@ -34,14 +35,18 @@ enum playerStates {MOVE, JUMP, ATTACK}
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	health = 100
-	healthbar.init_health(health)
+	# healthbar.init_health(health)
+
+func _quitGame():
+	if Input.is_action_pressed("quit"):
+		get_tree().quit()
 
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x*horizontalSens))
 		camera_holder.rotate_x(deg_to_rad(-event.relative.y*verticalSens))
-		camera_holder.rotation.x = clamp(camera_holder.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+		camera_holder.rotation.x = clamp(camera_holder.rotation.x, deg_to_rad(-40), deg_to_rad(35))
 		
 	# Handle jump.
 #		if Input.is_action_just_pressed("playerJump") and is_on_floor():
@@ -162,6 +167,8 @@ func move(_delta):
 				animation_player.play("heavyAttack3")
 				isLocked = true
 				resetAttack()
+	
+	_quitGame()
 
 func resetState():
 	currentState = playerStates.MOVE

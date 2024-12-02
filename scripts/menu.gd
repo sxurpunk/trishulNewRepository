@@ -18,7 +18,7 @@ func FocusEntered():
 
 func _on_play_pressed() -> void:
 	ButtonPlayer.play()
-	get_tree().change_scene_to_file("res://scenes/demoLevelScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/dungeonLevelScene.tscn")
 
 
 func _on_settings_pressed() -> void:

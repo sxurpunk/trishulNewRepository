@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbd7swwcugttu"]
+
+[ext_resource type="Texture2D" uid="uid://olly3disau2a" path="res://ui assets/trsishulDemoBackground.png" id="1_eaymy"]
+[ext_resource type="Script" path="res://scripts/closeMenu.gd" id="1_nb1sc"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nb1sc")
+
+[node name="TrsishulDemoBackground" type="Sprite2D" parent="."]
+position = Vector2(517, 288)
+scale = Vector2(1.02865, 1.02865)
+texture = ExtResource("1_eaymy")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 344.0
+offset_right = 485.0
+offset_bottom = 375.0
+text = "Quit"
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 189.0
+offset_right = 220.0
+offset_bottom = 212.0
+scale = Vector2(1.265, 1.5)
+text = "Music by eluukkanen composer"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
