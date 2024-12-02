@@ -1,7 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://d3ssbuy600gx8"]
+[gd_scene load_steps=34 format=4 uid="uid://d3ssbuy600gx8"]
 
 [ext_resource type="PackedScene" uid="uid://d0efb5mkyv6lx" path="res://TutorialCave/models/TrishulTutorialCave.glb" id="1_f6fjm"]
 [ext_resource type="Material" uid="uid://b2vtgkaderkso" path="res://TutorialCave/mats/caveRock.tres" id="2_24vob"]
+[ext_resource type="PackedScene" uid="uid://du377i14ya8wk" path="res://TutorialCave/models/tutDoorway2.glb" id="2_rf5u3"]
+[ext_resource type="Material" uid="uid://cei632kjc1r4" path="res://TutorialCave/mats/dungeonBrick.tres" id="3_q83ej"]
 [ext_resource type="Material" uid="uid://b0ykmus1xe1ti" path="res://TutorialCave/mats/caveWalls.tres" id="3_vfda3"]
 [ext_resource type="ArrayMesh" uid="uid://rvxtbsba35vu" path="res://TutorialCave/models/TrishulTutorialCaveWalls.obj" id="4_kb6yi"]
 [ext_resource type="ArrayMesh" uid="uid://c2k7d3e2ra307" path="res://TutorialCave/models/TrishulTutorialCavePillars.obj" id="5_l11rr"]
@@ -185,6 +187,9 @@ shape = SubResource("ConcavePolygonShape3D_62lwc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrishulTutorialCave/room1ground_003/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_cdi88")
 
+[node name="door2" parent="TrishulTutorialCave" index="5"]
+transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, -166.528, 48.3046, -169.16)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="TrishulTutorialCave/door2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrishulTutorialCave/door2/StaticBody3D"]
@@ -222,25 +227,42 @@ visible = false
 [node name="pillar_007" parent="TrishulTutorialCave" index="21"]
 visible = false
 
+[node name="door2_001" parent="TrishulTutorialCave" index="22"]
+transform = Transform3D(-1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -9, 10.1285, -27.006)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="TrishulTutorialCave/door2_001" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrishulTutorialCave/door2_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hj5wx")
+
+[node name="door1" parent="TrishulTutorialCave" index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 10.1285, -27.006)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TrishulTutorialCave/door1" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrishulTutorialCave/door1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2av3m")
 
+[node name="door1_001" parent="TrishulTutorialCave" index="24"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -166.528, 48.3046, -159.16)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="TrishulTutorialCave/door1_001" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrishulTutorialCave/door1_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mgtjw")
 
+[node name="doorway2" parent="TrishulTutorialCave" index="27"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="TrishulTutorialCave/doorway2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrishulTutorialCave/doorway2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hvbux")
+
+[node name="tutDoorway2" parent="TrishulTutorialCave" instance=ExtResource("2_rf5u3")]
+
+[node name="doorway2" parent="TrishulTutorialCave/tutDoorway2" index="0"]
+material_override = ExtResource("3_q83ej")
 
 [node name="pillar_008" type="MeshInstance3D" parent="TrishulTutorialCave"]
 transform = Transform3D(7.87405, 0, 17.2962, 0, 174.436, 0, -17.2962, 0, 7.87405, -394.11, -8.13651, -72.2998)
@@ -305,6 +327,7 @@ material_override = SubResource("StandardMaterial3D_6624s")
 shape = SubResource("ConcavePolygonShape3D_3i26p")
 
 [editable path="TrishulTutorialCave"]
+[editable path="TrishulTutorialCave/tutDoorway2"]
 [editable path="PlayerScene"]
 [editable path="PlayerScene/visuals/trsihulInjured"]
 [editable path="fixedTutorialPath"]
