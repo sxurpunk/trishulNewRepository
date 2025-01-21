@@ -10,6 +10,9 @@ var health = 0
 var SPEED = 5.0
 const JUMP_VELOCITY = 3
 
+@onready var marker_3d: Marker3D = $Marker3D
+const PROJECTILE_SCENE = preload("res://scenes/projectileScene.tscn")
+
 @export var walkSpeed = 6.0
 @export var runSpeed = 12.0
 @onready var walking_sound: AudioStreamPlayer3D = $walkingSound
@@ -55,6 +58,9 @@ func _input(event):
 #			currentState = playerStates.MOVE
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("shoot"):
+		_shoot_projectile()
 	
 		# Add the gravity.
 	if not is_on_floor():
@@ -185,6 +191,11 @@ func playAttackSound():
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.has_method("hurt"):
 		body.hurt()
+
+func _shoot_projectile():
+	var projectile_node = PROJECTILE_SCENE.instantiate()
+	get_parent().add_child(projectile_node)
+	projectile_node.global_position = marker_3d.global_position
 
 	#func _set_health(value):
 #		if health <= 0:

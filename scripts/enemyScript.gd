@@ -13,6 +13,7 @@ const ATTACK_RANGE = 2.5
 @onready var anim_tree: AnimationTree = $AnimationTree
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 var can_attack = true
 
 func _ready():

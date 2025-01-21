@@ -1881,7 +1881,7 @@ _data = {
 "walk": SubResource("Animation_2k1r5")
 }
 
-[node name="PlayerScene" type="CharacterBody3D"]
+[node name="PlayerScene" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3fffm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -2016,6 +2016,9 @@ volume_db = 5.0
 [node name="attackSound1" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_sijpk")
 bus = &"FX"
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-0.447603, 0.894232, 0, -0.894232, -0.447603, 0, 0, 0, 1, 0, 1.74933, -0.0259645)
 
 [connection signal="body_entered" from="visuals/finalCombatTrishulAnimations/Armature/Skeleton3D/tridentBone/hitbox" to="." method="_on_hitbox_body_entered"]
 
