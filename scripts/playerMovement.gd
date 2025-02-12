@@ -63,7 +63,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		_shoot_projectile()
 	
-	
 		# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -90,7 +89,6 @@ func move(_delta):
 	else:
 		SPEED = walkSpeed
 		isRunning = false
-	
 	
 	if is_on_floor():
 		if direction:
