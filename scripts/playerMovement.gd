@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 var health = 0
 var SPEED = 5.0
+var projectileCost = 0.0
 const JUMP_VELOCITY = 3
 
 @onready var marker_3d: Marker3D = $Marker3D
@@ -147,11 +148,13 @@ func move(_delta):
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
+				projectileCost += 25
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack2")
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
+				projectileCost += 25
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack1")
 				isLocked = true
@@ -161,6 +164,7 @@ func move(_delta):
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
+				projectileCost += 25
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack2")
 				isLocked = true
@@ -169,6 +173,7 @@ func move(_delta):
 				animation_player.play("attack4")
 				$attackSound1.play()
 				isLocked = true
+				projectileCost += 25
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack3")
 				isLocked = true
@@ -182,6 +187,9 @@ func resetState():
 func resetAttack():
 	attacks = 1
 
+func resetProjectile():
+	projectileCost = 0;
+
 func readyForInput():
 	can_attack = true
 
@@ -193,9 +201,11 @@ func _on_hitbox_body_entered(body: Node3D) -> void:
 		body.hurt()
 
 func _shoot_projectile():
-	var projectile_node = PROJECTILE_SCENE.instantiate()
-	get_parent().add_child(projectile_node)
-	projectile_node.global_position = marker_3d.global_position
+	if projectileCost == 100:
+		var projectile_node = PROJECTILE_SCENE.instantiate()
+		get_parent().add_child(projectile_node)
+		projectile_node.global_position = marker_3d.global_position
+		resetProjectile()
 
 	#func _set_health(value):
 #		if health <= 0:
