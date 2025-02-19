@@ -148,13 +148,11 @@ func move(_delta):
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
-				projectileCost += 25
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack2")
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
-				projectileCost += 25
 	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack1")
 				isLocked = true
@@ -164,7 +162,6 @@ func move(_delta):
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
-				projectileCost += 25
 	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack2")
 				isLocked = true
@@ -173,7 +170,6 @@ func move(_delta):
 				animation_player.play("attack4")
 				$attackSound1.play()
 				isLocked = true
-				projectileCost += 25
 	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack3")
 				isLocked = true
@@ -199,6 +195,7 @@ func playAttackSound():
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.has_method("hurt"):
 		body.hurt()
+		projectileCost += 25
 
 func _shoot_projectile():
 	if projectileCost == 100:

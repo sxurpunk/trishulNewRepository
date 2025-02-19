@@ -1,4 +1,4 @@
-extends CSGBox3Dw
+extends CSGBox3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
