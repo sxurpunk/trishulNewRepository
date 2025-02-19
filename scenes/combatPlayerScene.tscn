@@ -2018,7 +2018,7 @@ stream = ExtResource("4_sijpk")
 bus = &"FX"
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(-0.447603, 0.894232, 0, -0.894232, -0.447603, 0, 0, 0, 1, 0, 1.74933, -0.0259645)
+transform = Transform3D(-0.447603, 0.894232, 0, -0.894232, -0.447603, 0, 0, 0, 1, -0.0330455, 1.42998, -0.0259645)
 
 [connection signal="body_entered" from="visuals/finalCombatTrishulAnimations/Armature/Skeleton3D/tridentBone/hitbox" to="." method="_on_hitbox_body_entered"]
 

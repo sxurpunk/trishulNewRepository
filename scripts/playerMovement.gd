@@ -198,7 +198,7 @@ func _on_hitbox_body_entered(body: Node3D) -> void:
 		projectileCost += 25
 
 func _shoot_projectile():
-	if projectileCost == 100:
+	if projectileCost > 100:
 		var projectile_node = PROJECTILE_SCENE.instantiate()
 		get_parent().add_child(projectile_node)
 		projectile_node.global_position = marker_3d.global_position
