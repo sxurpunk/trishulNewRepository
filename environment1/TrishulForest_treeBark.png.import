@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccr8o2ytjl8vv"
 path.s3tc="res://.godot/imported/TrishulForest_treeBark.png-2b88ff31458f91c4881d662fb071e60c.s3tc.ctex"
+path.etc2="res://.godot/imported/TrishulForest_treeBark.png-2b88ff31458f91c4881d662fb071e60c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://environment1/TrishulForest_treeBark.png"
-dest_files=["res://.godot/imported/TrishulForest_treeBark.png-2b88ff31458f91c4881d662fb071e60c.s3tc.ctex"]
+dest_files=["res://.godot/imported/TrishulForest_treeBark.png-2b88ff31458f91c4881d662fb071e60c.s3tc.ctex", "res://.godot/imported/TrishulForest_treeBark.png-2b88ff31458f91c4881d662fb071e60c.etc2.ctex"]
 
 [params]
 

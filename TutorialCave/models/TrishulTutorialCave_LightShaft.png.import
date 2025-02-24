@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d78qkf4abno3"
 path.s3tc="res://.godot/imported/TrishulTutorialCave_LightShaft.png-7711a8f59ca723dd67e17220cd95c3a9.s3tc.ctex"
+path.etc2="res://.godot/imported/TrishulTutorialCave_LightShaft.png-7711a8f59ca723dd67e17220cd95c3a9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://TutorialCave/models/TrishulTutorialCave_LightShaft.png"
-dest_files=["res://.godot/imported/TrishulTutorialCave_LightShaft.png-7711a8f59ca723dd67e17220cd95c3a9.s3tc.ctex"]
+dest_files=["res://.godot/imported/TrishulTutorialCave_LightShaft.png-7711a8f59ca723dd67e17220cd95c3a9.s3tc.ctex", "res://.godot/imported/TrishulTutorialCave_LightShaft.png-7711a8f59ca723dd67e17220cd95c3a9.etc2.ctex"]
 
 [params]
 

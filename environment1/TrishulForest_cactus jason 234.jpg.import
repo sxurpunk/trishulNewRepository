@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfvx0gwe2pdeg"
 path.s3tc="res://.godot/imported/TrishulForest_cactus jason 234.jpg-d45579b0238040a95b9d50b014b6efdc.s3tc.ctex"
+path.etc2="res://.godot/imported/TrishulForest_cactus jason 234.jpg-d45579b0238040a95b9d50b014b6efdc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://environment1/TrishulForest_cactus jason 234.jpg"
-dest_files=["res://.godot/imported/TrishulForest_cactus jason 234.jpg-d45579b0238040a95b9d50b014b6efdc.s3tc.ctex"]
+dest_files=["res://.godot/imported/TrishulForest_cactus jason 234.jpg-d45579b0238040a95b9d50b014b6efdc.s3tc.ctex", "res://.godot/imported/TrishulForest_cactus jason 234.jpg-d45579b0238040a95b9d50b014b6efdc.etc2.ctex"]
 
 [params]
 

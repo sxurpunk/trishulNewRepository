@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chfn1iyg8h86w"
 path.s3tc="res://.godot/imported/texture_09.png-9ccdfe3e0d335d580c4df4cd50c968da.s3tc.ctex"
+path.etc2="res://.godot/imported/texture_09.png-9ccdfe3e0d335d580c4df4cd50c968da.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://third_person_controller_assets-main/textures/grids/Light/texture_09.png"
-dest_files=["res://.godot/imported/texture_09.png-9ccdfe3e0d335d580c4df4cd50c968da.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture_09.png-9ccdfe3e0d335d580c4df4cd50c968da.s3tc.ctex", "res://.godot/imported/texture_09.png-9ccdfe3e0d335d580c4df4cd50c968da.etc2.ctex"]
 
 [params]
 

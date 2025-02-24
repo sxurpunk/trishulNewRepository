@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lhh3e17yfe62"
 path.s3tc="res://.godot/imported/dirtTexture.png-9b0fbeb532ddb1ef216960c1f5408dd8.s3tc.ctex"
+path.etc2="res://.godot/imported/dirtTexture.png-9b0fbeb532ddb1ef216960c1f5408dd8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://TutorialCave/textures/dirtTexture.png"
-dest_files=["res://.godot/imported/dirtTexture.png-9b0fbeb532ddb1ef216960c1f5408dd8.s3tc.ctex"]
+dest_files=["res://.godot/imported/dirtTexture.png-9b0fbeb532ddb1ef216960c1f5408dd8.s3tc.ctex", "res://.godot/imported/dirtTexture.png-9b0fbeb532ddb1ef216960c1f5408dd8.etc2.ctex"]
 
 [params]
 

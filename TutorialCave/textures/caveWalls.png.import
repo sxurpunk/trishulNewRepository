@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3q6bkvcgilqb"
 path.s3tc="res://.godot/imported/caveWalls.png-c428332b31a7151193cc60c6e335d2ad.s3tc.ctex"
+path.etc2="res://.godot/imported/caveWalls.png-c428332b31a7151193cc60c6e335d2ad.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://TutorialCave/textures/caveWalls.png"
-dest_files=["res://.godot/imported/caveWalls.png-c428332b31a7151193cc60c6e335d2ad.s3tc.ctex"]
+dest_files=["res://.godot/imported/caveWalls.png-c428332b31a7151193cc60c6e335d2ad.s3tc.ctex", "res://.godot/imported/caveWalls.png-c428332b31a7151193cc60c6e335d2ad.etc2.ctex"]
 
 [params]
 

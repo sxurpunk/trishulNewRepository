@@ -134,7 +134,6 @@ sky_mode = 1
 unique_name_in_owner = true
 stream = ExtResource("3_a0pib")
 volume_db = -5.056
-autoplay = true
 bus = &"Music"
 
 [node name="wall1" type="Node3D" parent="."]

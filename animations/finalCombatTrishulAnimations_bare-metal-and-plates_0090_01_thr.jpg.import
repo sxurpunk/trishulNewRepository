@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1wbx4bso184h"
 path.s3tc="res://.godot/imported/finalCombatTrishulAnimations_bare-metal-and-plates_0090_01_thr.jpg-2a3946ddca4474d5f939d7cf9494a2bc.s3tc.ctex"
+path.etc2="res://.godot/imported/finalCombatTrishulAnimations_bare-metal-and-plates_0090_01_thr.jpg-2a3946ddca4474d5f939d7cf9494a2bc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://animations/finalCombatTrishulAnimations_bare-metal-and-plates_0090_01_thr.jpg"
-dest_files=["res://.godot/imported/finalCombatTrishulAnimations_bare-metal-and-plates_0090_01_thr.jpg-2a3946ddca4474d5f939d7cf9494a2bc.s3tc.ctex"]
+dest_files=["res://.godot/imported/finalCombatTrishulAnimations_bare-metal-and-plates_0090_01_thr.jpg-2a3946ddca4474d5f939d7cf9494a2bc.s3tc.ctex", "res://.godot/imported/finalCombatTrishulAnimations_bare-metal-and-plates_0090_01_thr.jpg-2a3946ddca4474d5f939d7cf9494a2bc.etc2.ctex"]
 
 [params]
 

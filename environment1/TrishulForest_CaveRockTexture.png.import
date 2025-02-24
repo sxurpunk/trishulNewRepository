@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cukwhd0jf2vab"
 path.s3tc="res://.godot/imported/TrishulForest_CaveRockTexture.png-601bc597c695782714a0b55bbe1dc9ca.s3tc.ctex"
+path.etc2="res://.godot/imported/TrishulForest_CaveRockTexture.png-601bc597c695782714a0b55bbe1dc9ca.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://environment1/TrishulForest_CaveRockTexture.png"
-dest_files=["res://.godot/imported/TrishulForest_CaveRockTexture.png-601bc597c695782714a0b55bbe1dc9ca.s3tc.ctex"]
+dest_files=["res://.godot/imported/TrishulForest_CaveRockTexture.png-601bc597c695782714a0b55bbe1dc9ca.s3tc.ctex", "res://.godot/imported/TrishulForest_CaveRockTexture.png-601bc597c695782714a0b55bbe1dc9ca.etc2.ctex"]
 
 [params]
 
