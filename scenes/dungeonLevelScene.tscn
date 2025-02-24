@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkx6sjwrododb"]
+[gd_scene load_steps=19 format=3 uid="uid://dkx6sjwrododb"]
 
 [ext_resource type="PackedScene" uid="uid://b5o3l4qqojbl6" path="res://dungeonLevel/dungeon-Environment.glb" id="1_233y0"]
 [ext_resource type="PackedScene" uid="uid://cnssd75uvdgh" path="res://scenes/combatPlayerScene.tscn" id="2_8s47r"]
-[ext_resource type="Script" path="res://scenes/changeSceneDemoEnd.gd" id="2_x8wpt"]
 [ext_resource type="AudioStream" uid="uid://fvdmvswtn32m" path="res://audio/Dark Cave Music - Royalty Free Music   Underground Network.mp3" id="3_a0pib"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="5_vlaop"]
 [ext_resource type="Script" path="res://scripts/backupScripts/damageTest.gd" id="6_81e37"]
@@ -117,7 +116,6 @@ shape = SubResource("ConcavePolygonShape3D_0b2ri")
 shape = SubResource("ConcavePolygonShape3D_nho81")
 
 [node name="Area3D" type="Area3D" parent="dungeon-Environment/doorNextLevel" index="0"]
-script = ExtResource("2_x8wpt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dungeon-Environment/doorNextLevel/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_2y4co")
