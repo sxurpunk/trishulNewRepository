@@ -120,6 +120,9 @@ shape = SubResource("ConcavePolygonShape3D_nho81")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dungeon-Environment/doorNextLevel/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_2y4co")
 
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="dungeon-Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00636, 0, -102.294)
+
 [node name="PlayerScene" parent="." instance=ExtResource("2_8s47r")]
 transform = Transform3D(1, -2.22045e-16, -1.39698e-09, 1.11022e-16, 1, 5.68434e-14, 1.39698e-09, -2.84217e-14, 1, -6.1067, 0.0342484, 108.174)
 
