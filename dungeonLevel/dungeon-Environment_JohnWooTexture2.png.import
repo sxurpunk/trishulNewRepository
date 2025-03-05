@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jul25rirk6o4"
+uid="uid://rtduqfgmwg51"
 path.s3tc="res://.godot/imported/dungeon-Environment_JohnWooTexture2.png-98f9bd60dd72e4ae1155ec473a587fb0.s3tc.ctex"
 path.etc2="res://.godot/imported/dungeon-Environment_JohnWooTexture2.png-98f9bd60dd72e4ae1155ec473a587fb0.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "0a7aa74a67780e8f59de6d04708964a8"
 }
 
 [deps]

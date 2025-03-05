@@ -1,0 +1,29 @@
+extends CharacterBody3D
+
+@onready var nav = $NavigationAgent3D
+
+var enemySpeed = 3.5
+var gravity = 9.8
+var health = 100
+
+func _process(delta):
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		velocity.y -= 2
+	var next_location = nav.get_next_path_position()
+	var current_location = global_transform.origin
+	var new_velocity = (next_location - current_location).normalized() * enemySpeed
+	
+	velocity = velocity.move_toward(new_velocity, 0.25)
+	
+	if health <= 0:
+		queue_free()
+	
+	move_and_slide()
+
+func hurt():
+	health -= 10
+
+func target_position(target):
+	nav.target_position = target

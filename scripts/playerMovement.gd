@@ -6,6 +6,8 @@ extends CharacterBody3D
 @onready var visuals: Node3D = $visuals
 # @onready var healthbar = $CanvasLayer/Healthbar
 
+@onready var target = $"."
+
 var health = 0
 var SPEED = 5.0
 var projectileCost = 0.0
@@ -35,6 +37,9 @@ var attacks : int = 1
 
 var currentState = playerStates.MOVE
 enum playerStates {MOVE, JUMP, ATTACK}
+
+func _process(delta):
+	get_tree().call_group("enemy", "target_position" , target.global_transform.origin)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvygsrl8ddbq"
+uid="uid://kb5ce22veuwu"
 path.s3tc="res://.godot/imported/dungeon-Environment_SuperMechaTexturePS1.png-2e7ec0819cf63a4c31b6ff8ed382a828.s3tc.ctex"
 path.etc2="res://.godot/imported/dungeon-Environment_SuperMechaTexturePS1.png-2e7ec0819cf63a4c31b6ff8ed382a828.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "aff9f6acd68a482f4370cd35abd51549"
 }
 
 [deps]
