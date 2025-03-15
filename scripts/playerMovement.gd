@@ -38,8 +38,9 @@ var attacks : int = 1
 var currentState = playerStates.MOVE
 enum playerStates {MOVE, JUMP, ATTACK}
 
-func _process(delta):
+func sensePlayer():
 	get_tree().call_group("enemy", "target_position" , target.global_transform.origin)
+	print("unity")
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -49,7 +50,6 @@ func _ready():
 func _quitGame():
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
-
 
 func _input(event):
 	if event is InputEventMouseMotion:

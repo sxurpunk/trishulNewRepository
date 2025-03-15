@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 @onready var nav = $NavigationAgent3D
 
+@onready var playerScript = $"../PlayerScene"
+
 var enemySpeed = 3.5
 var gravity = 9.8
 var health = 100
@@ -23,7 +25,12 @@ func _process(delta):
 	move_and_slide()
 
 func hurt():
-	health -= 10
+	health -= 25
 
 func target_position(target):
 	nav.target_position = target
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is Player:
+		playerScript.sensePlayer()
