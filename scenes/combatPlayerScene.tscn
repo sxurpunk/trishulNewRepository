@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnssd75uvdgh"]
+[gd_scene load_steps=22 format=3 uid="uid://cnssd75uvdgh"]
 
 [ext_resource type="Script" uid="uid://cim5o3ibauawv" path="res://scripts/playerMovement.gd" id="1_3fffm"]
 [ext_resource type="PackedScene" uid="uid://bhhuo4ayma75h" path="res://animations/finalCombatTrishulAnimations.glb" id="2_35p33"]
@@ -1881,6 +1881,9 @@ _data = {
 &"walk": SubResource("Animation_2k1r5")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_0f3qo"]
+radius = 1.02687
+
 [node name="PlayerScene" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3fffm")
 
@@ -2020,6 +2023,13 @@ bus = &"FX"
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(-0.447603, 0.894232, 0, -0.894232, -0.447603, 0, 0, 0, 1, -0.0330455, 1.42998, -0.0259645)
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07768, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_0f3qo")
+
 [connection signal="body_entered" from="visuals/finalCombatTrishulAnimations/Armature/Skeleton3D/tridentBone/hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="visuals/finalCombatTrishulAnimations"]

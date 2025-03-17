@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://mjcyu5rlgtjj"]
+
+[ext_resource type="Script" uid="uid://brrwml1i8bs60" path="res://scripts/enemyAIFirstTry.gd" id="1_j0e3d"]
+[ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://third_person_controller_assets-main/textures/grids/Red/texture_01.png" id="2_nxt13"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1kie"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyv6j"]
+albedo_texture = ExtResource("2_nxt13")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d1kie"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3eew"]
+radius = 9.2102
+
+[sub_resource type="Animation" id="Animation_j0e3d"]
+resource_name = "enemyAttack"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.367191, 0, 0, 0.930145, 0.2, 1, 0.712063, 0, 0, 0.702116, 0.3, 1, 0.904961, 0, 0, 0.425495, 0.4, 1, 0.976002, 0, 0, 0.21776, 0.5, 1, 0.999392, 0, 0, -0.0348558, 0.6, 1, 0.940922, 0, 0, -0.338623, 0.7, 1, -0.687335, 0, 0, 0.726341, 0.8, 1, -0.407231, 0, 0, 0.913325, 0.9, 1, -0.234337, 0, 0, 0.972156, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_nxt13"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pnyy"]
+_data = {
+&"RESET": SubResource("Animation_nxt13"),
+&"enemyAttack": SubResource("Animation_j0e3d")
+}
+
+[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_j0e3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_d1kie")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_eyv6j")
+mesh = SubResource("CapsuleMesh_d1kie")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.995223, 0, 0, 0, 0.995223, 0, 0, 0, 0.995223, 0, 0, 0)
+shape = SubResource("SphereShape3D_i3eew")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6pnyy")
+}
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

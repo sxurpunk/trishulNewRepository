@@ -24,6 +24,10 @@ window/size/mode=2
 window/stretch/mode="viewport"
 window/main_scene="res://scenes/dungeonLevelScene.tscn"
 
+[global_group]
+
+enemy=""
+
 [input]
 
 moveForward={

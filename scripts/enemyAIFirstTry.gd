@@ -1,8 +1,12 @@
+class_name enemy
 extends CharacterBody3D
 
 @onready var nav = $NavigationAgent3D
 
 @onready var playerScript = $"../PlayerScene"
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 var enemySpeed = 3.5
 var gravity = 9.8
@@ -30,6 +34,8 @@ func hurt():
 func target_position(target):
 	nav.target_position = target
 
+func attackPlayer():
+	animation_player.play("enemyAttack")
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:

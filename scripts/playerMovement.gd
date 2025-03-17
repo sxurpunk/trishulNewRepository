@@ -6,6 +6,8 @@ extends CharacterBody3D
 @onready var visuals: Node3D = $visuals
 # @onready var healthbar = $CanvasLayer/Healthbar
 
+@onready var enemyScript = $"../enemy"
+
 @onready var target = $"."
 
 var health = 0
@@ -208,6 +210,10 @@ func _shoot_projectile():
 		get_parent().add_child(projectile_node)
 		projectile_node.global_position = marker_3d.global_position
 		resetProjectile()
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is enemy:
+		enemyScript.attackPlayer()
 
 	#func _set_health(value):
 #		if health <= 0:
