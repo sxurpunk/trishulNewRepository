@@ -13,16 +13,6 @@ albedo_texture = ExtResource("2_nxt13")
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3eew"]
 radius = 9.2102
 
-[sub_resource type="Animation" id="Animation_j0e3d"]
-resource_name = "enemyAttack"
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.367191, 0, 0, 0.930145, 0.2, 1, 0.712063, 0, 0, 0.702116, 0.3, 1, 0.904961, 0, 0, 0.425495, 0.4, 1, 0.976002, 0, 0, 0.21776, 0.5, 1, 0.999392, 0, 0, -0.0348558, 0.6, 1, 0.940922, 0, 0, -0.338623, 0.7, 1, -0.687335, 0, 0, 0.726341, 0.8, 1, -0.407231, 0, 0, 0.913325, 0.9, 1, -0.234337, 0, 0, 0.972156, 1, 1, 0, 0, 0, 1)
-
 [sub_resource type="Animation" id="Animation_nxt13"]
 length = 0.001
 tracks/0/type = "rotation_3d"
@@ -33,6 +23,16 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_j0e3d"]
+resource_name = "enemyAttack"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0.367191, 0, 0, 0.930145, 0.2, 1, 0.712063, 0, 0, 0.702116, 0.3, 1, 0.904961, 0, 0, 0.425495, 0.4, 1, 0.976002, 0, 0, 0.21776, 0.5, 1, 0.999392, 0, 0, -0.0348558, 0.6, 1, 0.940922, 0, 0, -0.338623, 0.7, 1, -0.687335, 0, 0, 0.726341, 0.8, 1, -0.407231, 0, 0, 0.913325, 0.9, 1, -0.234337, 0, 0, 0.972156, 1, 1, 0, 0, 0, 1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6pnyy"]
 _data = {
 &"RESET": SubResource("Animation_nxt13"),
@@ -40,7 +40,6 @@ _data = {
 }
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_j0e3d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
