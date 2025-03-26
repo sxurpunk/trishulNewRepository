@@ -7,6 +7,8 @@ extends CharacterBody3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var isLocked = false
+
 
 var enemySpeed = 3.5
 var gravity = 9.8
@@ -36,6 +38,7 @@ func target_position(target):
 
 func attackPlayer():
 	animation_player.play("enemyAttack")
+	isLocked = true
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
