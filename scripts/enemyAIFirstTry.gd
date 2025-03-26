@@ -28,7 +28,11 @@ func _process(delta):
 	if health <= 0:
 		queue_free()
 	
-	move_and_slide()
+	if !animation_player.is_playing():
+		isLocked = false;
+	
+	if !isLocked:
+		move_and_slide()
 
 func hurt():
 	health -= 25
