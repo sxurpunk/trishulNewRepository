@@ -23,11 +23,11 @@ const PROJECTILE_SCENE = preload("res://scenes/projectileScene.tscn")
 @onready var walking_sound: AudioStreamPlayer3D = $walkingSound
 @onready var attack_sound_1: AudioStreamPlayer3D = $attackSound1
 
-var can_attack = true
-
 var isRunning = false
 
 var isLocked = false
+
+var readyForInput = false
 
 @export var horizontalSens = 0.5
 @export var verticalSens = 0.5
@@ -155,29 +155,29 @@ func move(_delta):
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
-	elif attacks == 2 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
+	elif attacks == 2 and readyForInput == true and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack2")
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
-	elif attacks == 2 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
+	elif attacks == 2 and readyForInput == true and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack1")
 				isLocked = true
 				resetAttack()
-	elif attacks == 3 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
+	elif attacks == 3 and readyForInput == true and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack3")
 				$attackSound1.play()
 				isLocked = true
 				attacks += 1
-	elif attacks == 3 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
+	elif attacks == 3 and readyForInput == true and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack2")
 				isLocked = true
 				resetAttack()
-	elif attacks == 4 and Input.is_action_just_pressed("playerAttack") && is_on_floor():
+	elif attacks == 4 and readyForInput == true and Input.is_action_just_pressed("playerAttack") && is_on_floor():
 				animation_player.play("attack4")
 				$attackSound1.play()
 				isLocked = true
-	elif attacks == 4 and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
+	elif attacks == 4 and readyForInput == true and Input.is_action_just_pressed("playerAttack2") && is_on_floor():
 				animation_player.play("heavyAttack3")
 				isLocked = true
 				resetAttack()
@@ -193,8 +193,11 @@ func resetAttack():
 func resetProjectile():
 	projectileCost = 0;
 
-func readyForInput():
-	can_attack = true
+func comboChain():
+	readyForInput = true
+
+func comboBreak():
+	readyForInput = false
 
 func playAttackSound():
 	$attackSound1.play()
