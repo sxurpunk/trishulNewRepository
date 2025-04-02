@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://mpbfvjiuvuoe"]
+
+[ext_resource type="Material" path="res://forest_level/fogParticles.tres" id="1_vxbcm"]
+
+[sub_resource type="Gradient" id="Gradient_6jnjj"]
+offsets = PackedFloat32Array(0, 0.128631, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ctprr"]
+gradient = SubResource("Gradient_6jnjj")
+
+[sub_resource type="Curve" id="Curve_gv6y2"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 0.2634), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mkmk4"]
+width = 2048
+curve = SubResource("Curve_gv6y2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7vwiq"]
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(400, 25, 400)
+spread = 100.0
+initial_velocity_max = 0.05
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+gravity = Vector3(0, 1, 0)
+scale_min = 400.0
+scale_max = 500.0
+scale_curve = SubResource("CurveTexture_mkmk4")
+color = Color(0.648083, 0.661136, 0.884872, 1)
+color_ramp = SubResource("GradientTexture1D_ctprr")
+anim_offset_min = 1.0
+anim_offset_max = 1.0
+turbulence_noise_strength = 8.79
+
+[sub_resource type="QuadMesh" id="QuadMesh_idd81"]
+material = ExtResource("1_vxbcm")
+size = Vector2(200, 150)
+
+[node name="FogParticles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 225
+lifetime = 20.0
+fixed_fps = 60
+visibility_aabb = AABB(-300, -4, -300, 600, 8, 600)
+process_material = SubResource("ParticleProcessMaterial_7vwiq")
+draw_pass_1 = SubResource("QuadMesh_idd81")

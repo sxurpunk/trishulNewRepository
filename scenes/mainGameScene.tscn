@@ -61,8 +61,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jfy4w"]
 _data = {
-"RESET": SubResource("Animation_1ryij"),
-"takeHit": SubResource("Animation_3ryrc")
+&"RESET": SubResource("Animation_1ryij"),
+&"takeHit": SubResource("Animation_3ryrc")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qtdi"]
@@ -93,7 +93,7 @@ size = Vector3(2, 2, 2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gameMap/boxMid"]
 libraries = {
-"": SubResource("AnimationLibrary_jfy4w")
+&"": SubResource("AnimationLibrary_jfy4w")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gameMap/boxMid"]

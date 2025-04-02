@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cxwkd1gadd7kf"]
+
+[ext_resource type="Texture2D" uid="uid://bbia6aqu6h5o5" path="res://forest_level/leavesTransparent.png" id="1_31dop"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_31dop")
+metallic_specular = 0.0
+texture_filter = 0

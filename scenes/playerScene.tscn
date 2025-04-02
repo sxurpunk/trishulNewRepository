@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://5skh5ty5s1ka"]
+[gd_scene load_steps=13 format=3 uid="uid://5skh5ty5s1ka"]
 
-[ext_resource type="Script" path="res://scripts/injuredPlayer.gd" id="1_g2jod"]
+[ext_resource type="Script" uid="uid://bq3y4q0382ocl" path="res://scripts/injuredPlayer.gd" id="1_g2jod"]
 [ext_resource type="PackedScene" uid="uid://l7s7dmcau6ra" path="res://animations/trsihulInjured.glb" id="2_k31r4"]
+[ext_resource type="Shader" uid="uid://ctljwjujnwsty" path="res://shaders/Pixelate.gdshader" id="3_gyu2u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sls2o"]
 radius = 0.3
@@ -1865,13 +1866,19 @@ tracks/42/keys = PackedFloat32Array(0, 1, -6.03497e-05, 43.5716, -6.19887e-06)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x1uf5"]
 _data = {
-"fall": SubResource("Animation_8cidd"),
-"idle": SubResource("Animation_m65fl"),
-"jump": SubResource("Animation_0uvfj"),
-"kick": SubResource("Animation_rx5wm"),
-"run": SubResource("Animation_18myv"),
-"walk": SubResource("Animation_b4tys")
+&"fall": SubResource("Animation_8cidd"),
+&"idle": SubResource("Animation_m65fl"),
+&"jump": SubResource("Animation_0uvfj"),
+&"kick": SubResource("Animation_rx5wm"),
+&"run": SubResource("Animation_18myv"),
+&"walk": SubResource("Animation_b4tys")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smhll"]
+shader = ExtResource("3_gyu2u")
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/resolution_downsampling = 2.0
+shader_parameter/bit_depth = 16.0
 
 [node name="PlayerScene" type="CharacterBody3D"]
 script = ExtResource("1_g2jod")
@@ -1935,7 +1942,7 @@ bones/24/position = Vector3(-1.54525e-05, 43.5717, 6.07967e-06)
 
 [node name="AnimationPlayer" parent="visuals/trsihulInjured" index="3"]
 libraries = {
-"": SubResource("AnimationLibrary_x1uf5")
+&"": SubResource("AnimationLibrary_x1uf5")
 }
 
 [node name="cameraHolder" type="Node3D" parent="."]
@@ -1943,5 +1950,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="Camera3D" type="Camera3D" parent="cameraHolder"]
 transform = Transform3D(1, 0, 0, 0, 0.995443, 0.0953593, 0, -0.0953593, 0.995443, 0, 0.258415, 2.84663)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="cameraHolder/Camera3D"]
+
+[node name="PSX-Shader" type="ColorRect" parent="cameraHolder/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_smhll")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="visuals/trsihulInjured"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cnssd75uvdgh"]
+[gd_scene load_steps=24 format=3 uid="uid://cnssd75uvdgh"]
 
 [ext_resource type="Script" uid="uid://cim5o3ibauawv" path="res://scripts/playerMovement.gd" id="1_3fffm"]
 [ext_resource type="PackedScene" uid="uid://bhhuo4ayma75h" path="res://animations/finalCombatTrishulAnimations.glb" id="2_35p33"]
+[ext_resource type="Shader" uid="uid://ctljwjujnwsty" path="res://shaders/Pixelate.gdshader" id="3_14aan"]
 [ext_resource type="AudioStream" uid="uid://bnv47a8xwk8n6" path="res://audio/Ejimas1.ogg" id="3_ttpky"]
 [ext_resource type="AudioStream" uid="uid://bkcenj3usm3sf" path="res://audio/sword_sfx.mp3" id="4_sijpk"]
 
@@ -1923,6 +1924,12 @@ _data = {
 &"walk": SubResource("Animation_2k1r5")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0u12"]
+shader = ExtResource("3_14aan")
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/resolution_downsampling = 4.0
+shader_parameter/bit_depth = 16.0
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_0f3qo"]
 radius = 1.02687
 
@@ -2053,6 +2060,17 @@ transform = Transform3D(1, 0, 0, 0, 0.994254, 0.107045, 0, -0.107045, 0.994254, 
 
 [node name="Camera3D" type="Camera3D" parent="cameraHolder"]
 transform = Transform3D(1, 0, 0, 0, 0.995443, 0.0953593, 0, -0.0953593, 0.995443, 0, 0.258415, 2.84663)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="cameraHolder/Camera3D"]
+
+[node name="PSX-Shader" type="ColorRect" parent="cameraHolder/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_l0u12")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="walkingSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_ttpky")
