@@ -1504,9 +1504,9 @@ glow_enabled = true
 [node name="Node3D" type="Node3D"]
 
 [node name="PlayerScene" parent="." instance=ExtResource("2_qevkk")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.80093, 4.04133, -15.3651)
-walkSpeed = 15.0
-runSpeed = 100.0
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.80093, 0.0647998, -15.3651)
+walkSpeed = 30.0
+runSpeed = 60.0
 
 [node name="ForestRework" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
