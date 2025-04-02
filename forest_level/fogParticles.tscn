@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://mpbfvjiuvuoe"]
 
-[ext_resource type="Material" path="res://forest_level/fogParticles.tres" id="1_vxbcm"]
+[ext_resource type="Material" uid="uid://fobi67bi0hto" path="res://forest_level/fogParticles.tres" id="1_vxbcm"]
 
 [sub_resource type="Gradient" id="Gradient_6jnjj"]
 offsets = PackedFloat32Array(0, 0.128631, 1)
