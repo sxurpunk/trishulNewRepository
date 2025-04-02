@@ -26,13 +26,16 @@ func _process(delta):
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	
 	if health <= 0:
-		queue_free()
+		die()
 	
 	if !animation_player.is_playing():
 		isLocked = false;
 	
 	if !isLocked:
 		move_and_slide()
+
+func die():
+	call_deferred("free")
 
 func hurt():
 	health -= 25
