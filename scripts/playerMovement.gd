@@ -40,9 +40,9 @@ var attacks : int = 1
 var currentState = playerStates.MOVE
 enum playerStates {MOVE, JUMP, ATTACK}
 
-func sensePlayer():
-	get_tree().call_group("enemy", "target_position" , target.global_transform.origin)
-	print("unity")
+#func sensePlayer():
+#	get_tree().call_group("enemy", "target_position" , target.global_transform.origin)
+#	print("unity")
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -214,9 +214,9 @@ func _shoot_projectile():
 		projectile_node.global_position = marker_3d.global_position
 		resetProjectile()
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is enemy:
-		enemyScript.attackPlayer()
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+#	if body is enemy:
+#		enemyScript.attackPlayer()
 
 	#func _set_health(value):
 #		if health <= 0:

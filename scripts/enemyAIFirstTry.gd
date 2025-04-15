@@ -3,14 +3,13 @@ extends CharacterBody3D
 
 @onready var nav = $NavigationAgent3D
 
-@onready var playerScript = $"../PlayerScene"
+@onready var playerScript
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var isLocked = false
 
-
-var enemySpeed = 3.5
+var enemySpeed = 1.5
 var gravity = 9.8
 var health = 100
 
@@ -33,9 +32,11 @@ func _process(delta):
 	
 	if !isLocked:
 		move_and_slide()
+	
+	moveToPlayer(delta)
 
 func die():
-	call_deferred("free")
+	queue_free()
 
 func hurt():
 	health -= 25
@@ -47,6 +48,14 @@ func attackPlayer():
 	animation_player.play("enemyAttack")
 	isLocked = true
 
+func moveToPlayer(delta:float):
+	if playerScript != null:
+		self.global_position=lerp(self.global_position, playerScript.global_position, enemySpeed * delta)
+
+func _on_attackTrigger_entered(body: Node3D) -> void:
+	if body is Player:
+		attackPlayer()
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
-		playerScript.sensePlayer()
+		playerScript = body
