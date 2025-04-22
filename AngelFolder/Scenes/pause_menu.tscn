@@ -1,0 +1,188 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpan4dm8402w5"]
+
+[ext_resource type="Shader" uid="uid://dn58ekj4ch65y" path="res://AngelFolder/pause_menu.gdshader" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://v640tykh3vnf" path="res://AngelFolder/Scripts/pause_menu.gd" id="1_k0w1u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
+shader = ExtResource("1_emv3i")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_bpi0q"]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8]
+}
+
+[sub_resource type="Animation" id="Animation_1och7"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmyb1"]
+_data = {
+&"RESET": SubResource("Animation_bpi0q"),
+&"blur": SubResource("Animation_1och7")
+}
+
+[node name="Pause Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(114, 381)
+script = ExtResource("1_k0w1u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_k0w1u")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -3.0
+offset_right = 23.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-192, 377)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -217.0
+offset_right = 215.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="PanelContainer/PauseMenu"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Save" type="Button" parent="PanelContainer/PauseMenu"]
+layout_mode = 2
+text = "Save"
+
+[node name="Load" type="Button" parent="PanelContainer/PauseMenu"]
+layout_mode = 2
+text = "Load"
+
+[node name="Restart" type="Button" parent="PanelContainer/PauseMenu"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Settings" type="Button" parent="PanelContainer/PauseMenu"]
+layout_mode = 2
+text = "Setting"
+
+[node name="Quit" type="Button" parent="PanelContainer/PauseMenu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="SaveMenu" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/SaveMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save your progess?"
+horizontal_alignment = 1
+
+[node name="Yes_Load" type="Button" parent="PanelContainer/SaveMenu"]
+layout_mode = 2
+text = "Yes"
+
+[node name="No_Load" type="Button" parent="PanelContainer/SaveMenu"]
+layout_mode = 2
+text = "no"
+
+[node name="LoadMenu" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/LoadMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Load previous save files?"
+horizontal_alignment = 1
+
+[node name="Yes" type="Button" parent="PanelContainer/LoadMenu"]
+layout_mode = 2
+text = "Yes"
+
+[node name="No" type="Button" parent="PanelContainer/LoadMenu"]
+layout_mode = 2
+text = "no"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vmyb1")
+}
+
+[connection signal="pressed" from="PanelContainer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseMenu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/SaveMenu/Yes_Load" to="." method="_on_yes_load_pressed"]
+[connection signal="pressed" from="PanelContainer/SaveMenu/No_Load" to="." method="_on_no_load_pressed"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4wv4uy651ibm"]
+
+[ext_resource type="Script" uid="uid://dlope80203q52" path="res://AngelFolder/Scripts/Main_Menu.gd" id="1_b7rmo"]
+[ext_resource type="FontFile" uid="uid://bkiga6cr523aq" path="res://AngelFolder/Font/BirchStd.otf" id="1_c4tk2"]
+[ext_resource type="Theme" uid="uid://dk1dr3uexl7ad" path="res://AngelFolder/Button/Default.tres" id="1_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://3n24bgcygb7e" path="res://AngelFolder/Scripts/1735852275266-15388b53-3aed-443c-9d30-422a869523bf_1.png" id="2_00u4r"]
+
+[sub_resource type="Theme" id="Theme_rmbjf"]
+HeaderLarge/colors/font_color = Color(1, 1, 1, 1)
+HeaderLarge/font_sizes/font_size = 120
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_b7rmo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.165656, 0.165656, 0.165656, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(958.001, 538.876)
+scale = Vector2(2.42225, 1.05249)
+texture = ExtResource("2_00u4r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.204861
+anchor_top = 0.337963
+anchor_right = 0.204861
+anchor_bottom = 1.0
+offset_left = 277.667
+offset_top = 272.0
+offset_right = 717.667
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_rmbjf")
+text = "Play"
+
+[node name="Manual" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_rmbjf")
+text = "Manual"
+
+[node name="Settings" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_rmbjf")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_rmbjf")
+text = "Quit"
+
+[node name="Game Title" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -477.0
+offset_right = 475.0
+offset_bottom = 179.0
+grow_horizontal = 2
+theme = SubResource("Theme_rmbjf")
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("1_c4tk2")
+text = "Trishul"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Manual" to="." method="_on_manual_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

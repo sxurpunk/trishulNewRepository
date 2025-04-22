@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxite1l2wmd3o"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_0lujy"]
+[ext_resource type="Script" uid="uid://bagxdfplsby6" path="res://scripts/menu.gd" id="1_0lujy"]
 [ext_resource type="Texture2D" uid="uid://tdlux56yko3h" path="res://ui assets/trsihulmenuBackground.png" id="2_3o45t"]
 [ext_resource type="Texture2D" uid="uid://cmjownbsvtw8l" path="res://ui assets/trishullOGO.png" id="2_q800x"]
 [ext_resource type="AudioStream" uid="uid://fvdmvswtn32m" path="res://audio/Dark Cave Music - Royalty Free Music   Underground Network.mp3" id="3_6bj71"]
@@ -17,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_0lujy")
 
 [node name="TrsihulmenuBackground" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(513, 289)
 scale = Vector2(1.02588, 1.03385)
 texture = ExtResource("2_3o45t")
@@ -48,7 +49,6 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Settings" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
