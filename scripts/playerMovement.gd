@@ -49,9 +49,15 @@ func _ready():
 	health = 100
 	# healthbar.init_health(health)
 
-func _quitGame():
-	if Input.is_action_pressed("quit"):
-		get_tree().quit()
+#func _quitGame():
+#	if Input.is_action_pressed("quit"):
+#		get_tree().quit()
+
+func _die():
+	if Input.is_action_pressed("die"):
+		isLocked = true
+		animation_player.play("death")
+		print("unity")
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -182,7 +188,7 @@ func move(_delta):
 				isLocked = true
 				resetAttack()
 	
-	_quitGame()
+	_die()
 
 func resetState():
 	currentState = playerStates.MOVE
@@ -209,6 +215,7 @@ func _on_hitbox_body_entered(body: Node3D) -> void:
 
 func _shoot_projectile():
 	if projectileCost > 100:
+		visuals.look_at(position + direction)
 		var projectile_node = PROJECTILE_SCENE.instantiate()
 		get_parent().add_child(projectile_node)
 		projectile_node.global_position = marker_3d.global_position
