@@ -10,10 +10,12 @@ func _ready() -> void:
 	$AnimationPlayer.play("RESET")
 
 func resume():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
 
 func pause():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	show()
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
