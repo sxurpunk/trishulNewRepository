@@ -49,7 +49,7 @@ func attackPlayer():
 	isLocked = true
 
 func doDamage():
-	playerScript.health -= 50
+	playerScript.playerHealth -= 50
 	print("doing damage")
 
 func moveToPlayer(delta:float):

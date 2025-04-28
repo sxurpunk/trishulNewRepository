@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://mjcyu5rlgtjj"]
 
 [ext_resource type="Script" uid="uid://brrwml1i8bs60" path="res://scripts/enemyAIFirstTry.gd" id="1_j0e3d"]
-[ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://third_person_controller_assets-main/textures/grids/Red/texture_01.png" id="2_nxt13"]
+[ext_resource type="Texture2D" uid="uid://bntmo41043ft0" path="res://images/Brickner-Wood-Drake.webp" id="2_j0e3d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1kie"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyv6j"]
-albedo_texture = ExtResource("2_nxt13")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxt13"]
+albedo_texture = ExtResource("2_j0e3d")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d1kie"]
 
@@ -58,7 +58,7 @@ script = ExtResource("1_j0e3d")
 shape = SubResource("CapsuleShape3D_d1kie")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_eyv6j")
+material_override = SubResource("StandardMaterial3D_nxt13")
 mesh = SubResource("CapsuleMesh_d1kie")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
