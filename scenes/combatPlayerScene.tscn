@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cnssd75uvdgh"]
+[gd_scene load_steps=25 format=3 uid="uid://cnssd75uvdgh"]
 
 [ext_resource type="Script" uid="uid://cim5o3ibauawv" path="res://scripts/playerMovement.gd" id="1_3fffm"]
 [ext_resource type="PackedScene" uid="uid://bhhuo4ayma75h" path="res://animations/finalCombatTrishulAnimations.glb" id="2_35p33"]
@@ -2083,6 +2083,9 @@ shader_parameter/fog_color = Color(0, 0, 0, 1)
 shader_parameter/resolution_downsampling = 4.0
 shader_parameter/bit_depth = 16.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_14aan"]
+size = Vector3(0.217041, 0.154053, 0.16156)
+
 [node name="PlayerScene" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3fffm")
 
@@ -2221,6 +2224,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Area3D" type="Area3D" parent="cameraHolder"]
+transform = Transform3D(1, 0, 0, 0, 0.995443, 0.0953593, 0, -0.0953593, 0.995443, 0, 0.258415, 2.84663)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cameraHolder/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020874, -0.0125748, -0.00946617)
+shape = SubResource("BoxShape3D_14aan")
 
 [node name="walkingSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_ttpky")
