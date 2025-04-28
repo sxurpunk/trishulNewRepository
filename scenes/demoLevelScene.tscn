@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cr603n0nmlgot"]
+[gd_scene load_steps=26 format=4 uid="uid://cr603n0nmlgot"]
 
 [ext_resource type="Texture2D" uid="uid://bvlvco14o4ty5" path="res://environment1/demoLevel_BrickBridge.png" id="1_gg10s"]
 [ext_resource type="Texture2D" uid="uid://b2cbvmya8rgqw" path="res://environment1/demoLevel_dungeonBrick.png" id="2_7txcy"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://q5xoflilruaq" path="res://environment1/demoLevel_GBjgl17agAAoQ9y.jpg" id="4_kusld"]
 [ext_resource type="PackedScene" uid="uid://d3ge2a2cp311" path="res://healthbar/healthbar.tscn" id="6_1v2yv"]
 [ext_resource type="AudioStream" uid="uid://fvdmvswtn32m" path="res://audio/Dark Cave Music - Royalty Free Music   Underground Network.mp3" id="7_wdayi"]
-[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="8_5xg4c"]
+[ext_resource type="PackedScene" uid="uid://mjcyu5rlgtjj" path="res://scenes/basicEnemy.tscn" id="8_duvpt"]
 [ext_resource type="PackedScene" uid="uid://dpan4dm8402w5" path="res://AngelFolder/Scenes/pause_menu.tscn" id="9_2281b"]
-[ext_resource type="Script" uid="uid://evy2qk0dwhaj" path="res://scripts/backupScripts/damageTest.gd" id="9_eolvt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_r8ldg"]
 vertices = PackedVector3Array(-1.13652, 0.489616, -5.56477, 1.11348, 0.489616, -5.56477, 1.36348, 0.489616, -6.56477, -1.38652, 0.489616, -6.56477, -11.8865, 0.489616, -12.5648, -3.13652, 0.489616, -34.3148, -5.38652, 0.489616, -33.5648, -5.38652, 0.489616, -31.0648, 5.61348, 0.489616, -30.5648, 5.36348, 0.489616, -33.5648, 3.11348, 0.489616, -34.3148, -5.88652, 0.489616, -30.3148, 11.8635, 0.489616, -12.5648, 11.8635, 0.489616, -24.5648, -11.8865, 0.489616, -24.5648, -10.1365, 0.489616, -28.5648, 5.86348, 0.489616, -6.56477, 10.1135, 0.489616, -8.31477, -10.1365, 0.489616, -8.31477, -5.88652, 0.489616, -6.56477, 9.86348, 0.489616, -28.8148, -5.88652, 10.7396, -19.0648, -8.13652, 10.7396, -19.0648, -8.13652, 10.7396, -17.8148, -5.88652, 10.7396, -12.5648, -4.38652, 10.7396, -14.3148, -0.386522, 10.7396, -10.3148, 5.86348, 10.7396, -12.5648, 4.11348, 10.7396, -14.0648, -0.386522, 10.7396, -12.5648, 8.11348, 10.7396, -17.8148, 8.11348, 10.7396, -19.0648, 5.86348, 10.7396, -19.0648, 5.86348, 10.7396, -17.8148, -4.13652, 10.7396, -22.8148, -5.63652, 10.7396, -24.5648, -0.636522, 10.7396, -24.3148, 0.113478, 10.7396, -26.8148, 6.11348, 10.7396, -24.0648, 4.36348, 10.7396, -22.5648, 0.613478, 10.7396, -24.3148, -1.38652, 0.489616, -4.31477, 1.36348, 0.489616, -4.31477, -4.38652, 0.489616, 4.43523, 4.36348, 0.489616, 4.43523, -4.38652, 0.489616, -4.31477, 4.36348, 0.489616, -4.31477)
@@ -211,49 +210,6 @@ shadow_mesh = SubResource("ArrayMesh_gamfp")
 
 [sub_resource type="Environment" id="Environment_xxrdu"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aljav"]
-albedo_texture = ExtResource("8_5xg4c")
-uv1_triplanar = true
-
-[sub_resource type="Animation" id="Animation_1ryij"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_3ryrc"]
-resource_name = "takeHit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0), Vector3(3.14159, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jfy4w"]
-_data = {
-&"RESET": SubResource("Animation_1ryij"),
-&"takeHit": SubResource("Animation_3ryrc")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ex7p1"]
-size = Vector3(2.09857, 2.32819, 2.13861)
-
 [node name="demoLevel" type="Node3D"]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -287,81 +243,6 @@ skeleton = NodePath("")
 [node name="PlayerScene" parent="." instance=ExtResource("2_opin6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337868, 0)
 
-[node name="Cube" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="0"]
-transform = Transform3D(1, 5.85134e-06, -2.51133e-05, 5.73737e-07, 0.968647, 0.248442, 2.57791e-05, -0.248442, 0.968646, -0.003006, 5.22004, -1.13242)
-
-[node name="Cube_021" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="1"]
-transform = Transform3D(1, 5.85134e-06, -2.51133e-05, 5.73737e-07, 0.968647, 0.248442, 2.57791e-05, -0.248442, 0.968646, -0.00668423, 5.36696, -0.269519)
-
-[node name="Cube_022" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="2"]
-transform = Transform3D(1, 5.85134e-06, -2.51133e-05, 5.73737e-07, 0.968647, 0.248442, 2.57791e-05, -0.248442, 0.968646, 0.527934, 5.27943, -1.1663)
-
-[node name="Cube_023" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="3"]
-transform = Transform3D(1, 5.85134e-06, -2.51133e-05, 5.73737e-07, 0.968647, 0.248442, 2.57791e-05, -0.248442, 0.968646, -0.500431, 5.28486, -1.16772)
-
-[node name="Cube_002" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="4"]
-transform = Transform3D(1, -0.000210421, 0.00072936, 5.54923e-07, 0.961015, 0.276496, -0.000759106, -0.276496, 0.961014, 0.000924198, 4.31858, -1.04765)
-
-[node name="Cube_007" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="5"]
-transform = Transform3D(0.0912272, 0.988973, -0.116667, -0.857648, 0.137566, 0.495496, 0.506081, 0.0548568, 0.860739, 2.06543, -0.367044, 0.00900644)
-
-[node name="Cube_006" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="6"]
-transform = Transform3D(0.137628, 0.612381, 0.778491, -0.894646, -0.260427, 0.363022, 0.425048, -0.746436, 0.512023, 1.90909, 0.72292, -0.609077)
-
-[node name="Cube_005" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="7"]
-transform = Transform3D(0.333567, 0.0737897, 0.939834, -0.942574, 0.0440133, 0.331083, -0.0169347, -0.996302, 0.0842337, 1.47344, 2.33016, -0.904435)
-
-[node name="Icosphere_001" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="8"]
-transform = Transform3D(0.333567, 0.0737897, 0.939834, -0.942574, 0.0440133, 0.331083, -0.0169347, -0.996302, 0.0842337, 1.01335, 3.59506, -0.863638)
-
-[node name="Cube_009" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="9"]
-transform = Transform3D(0.272277, -0.872679, -0.405336, 0.918419, 0.361348, -0.161042, 0.287005, -0.32842, 0.899871, -2.30513, -0.139183, -1.90175)
-
-[node name="Trident" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="10"]
-transform = Transform3D(0.0145328, -1.80897, -0.168404, -0.18353, -0.740433, -0.000909793, -0.0286117, 3.83068, -0.0797016, -2.05099, -0.0362565, -2.44853)
-
-[node name="Cube_015" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="11"]
-transform = Transform3D(0.347442, -0.937534, 0.0177283, 0.937483, 0.347707, 0.0149919, -0.0202195, 0.011411, 0.99973, -1.85522, 0.886723, -1.9105)
-
-[node name="Cube_016" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="12"]
-transform = Transform3D(0.190216, -0.944845, 0.266619, 0.879388, 0.0432441, -0.474138, 0.436458, 0.32465, 0.839111, -1.32582, 2.45087, -1.55307)
-
-[node name="Icosphere" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="13"]
-transform = Transform3D(0.190216, -0.944845, 0.266619, 0.879388, 0.0432441, -0.474138, 0.436458, 0.32465, 0.839111, -1.05509, 3.63638, -0.981351)
-
-[node name="Cube_001" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="14"]
-transform = Transform3D(0.999999, -5.81642e-05, 0.00133213, 4.38307e-06, 0.999186, 0.0403367, -0.00133339, -0.0403367, 0.999185, -0.0121978, 3.09228, -0.880903)
-
-[node name="Cube_004" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="15"]
-transform = Transform3D(0.999999, 4.38739e-06, 0.00133339, 4.38308e-06, 0.999978, -0.00657753, -0.00133339, 0.00657751, 0.999977, -0.00137502, 1.39213, -0.697619)
-
-[node name="Cube_010" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="16"]
-transform = Transform3D(0.99994, 0.0107815, 0.00179935, -0.0108503, 0.998935, 0.0448392, -0.00131325, -0.0448562, 0.998993, 1.14141, -5.57351, -1.30792)
-
-[node name="Cube_018" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="17"]
-transform = Transform3D(0.993034, 0.117692, -0.00551512, -0.117811, 0.991322, -0.0583103, -0.00139469, 0.0585541, 0.998283, 1.07019, -4.01132, -1.56374)
-
-[node name="Cube_017" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="18"]
-transform = Transform3D(0.993077, 0.111695, -0.0363585, -0.117456, 0.94113, -0.316983, -0.00118665, 0.319059, 0.947734, 0.785374, -1.53311, -1.08743)
-
-[node name="Cube_019" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="19"]
-transform = Transform3D(0.999258, 0.0382182, 0.00471442, -0.0385074, 0.992127, 0.119166, -0.000123152, -0.119259, 0.992863, -1.20331, -5.58077, 0.550652)
-
-[node name="Cube_011" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="20"]
-transform = Transform3D(0.993904, -0.110138, -0.00506671, 0.110255, 0.992823, 0.0463227, -7.16969e-05, -0.0465989, 0.998914, -1.11314, -4.04068, 0.135443)
-
-[node name="Cube_012" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="21"]
-transform = Transform3D(0.993904, -0.105698, -0.0313466, 0.110249, 0.952423, 0.284139, -0.000177822, -0.285863, 0.95827, -0.803981, -1.54997, -0.277794)
-
-[node name="Cube_003" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="22"]
-transform = Transform3D(1, -6.99441e-15, -1.42109e-14, 6.77236e-15, 1, -9.31323e-09, -1.42109e-14, 9.31323e-09, 1, -0.165237, 0.159942, -0.721348)
-
-[node name="Cube_020" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="23"]
-transform = Transform3D(1, -6.99441e-15, -1.42109e-14, 6.77236e-15, 1, -9.31323e-09, -1.42109e-14, 9.31323e-09, 1, -0.00340529, 0.588746, -0.743896)
-
-[node name="tridentBone" parent="PlayerScene/visuals/finalCombatTrishulAnimations/Armature/Skeleton3D" index="24"]
-transform = Transform3D(0.0145328, -1.80897, -0.168404, -0.18353, -0.740433, -0.000909793, -0.0286117, 3.83068, -0.0797016, -2.05099, -0.0362565, -2.44853)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerScene"]
 
 [node name="Healthbar" parent="PlayerScene/CanvasLayer" instance=ExtResource("6_1v2yv")]
@@ -379,25 +260,13 @@ stream = ExtResource("7_wdayi")
 volume_db = -5.056
 bus = &"Music"
 
-[node name="boxMid" type="CSGBox3D" parent="."]
-transform = Transform3D(0.432813, 0, 0, 0, 1, 0, 0, 0, 0.347071, 0, 0.917155, -18.5688)
-material_override = SubResource("StandardMaterial3D_aljav")
-use_collision = true
-size = Vector3(2, 2, 2)
-script = ExtResource("9_eolvt")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="boxMid"]
-libraries = {
-&"": SubResource("AnimationLibrary_jfy4w")
-}
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="boxMid"]
-transform = Transform3D(1.00004, 0, 0, 0, 1, 0, 0, 0, 1, -0.00839419, -0.120026, -0.0196209)
-shape = SubResource("BoxShape3D_ex7p1")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("9_2281b")]
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy" parent="." instance=ExtResource("8_duvpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194803, 1, -24.6031)
 
 [editable path="PlayerScene"]
 [editable path="PlayerScene/visuals/finalCombatTrishulAnimations"]

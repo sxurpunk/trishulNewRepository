@@ -6,7 +6,7 @@ render_mode blend_mix,
 	diffuse_burley,
 	specular_schlick_ggx,
 	depth_prepass_alpha,
-	shadows_disabled, 
+	shadows_disabled,
 	skip_vertex_transform;
 
 varying float w_comp;
@@ -36,7 +36,7 @@ uniform float jitter: hint_range(0, 1) = 0.25;
 
 
 void vertex()
-{	
+{
 	VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	w_comp = (PROJECTION_MATRIX * vec4(VERTEX, 1.0)).w;
 	VERTEX /= w_comp;
@@ -44,11 +44,11 @@ void vertex()
 	VERTEX.x = floor(VERTEX.x * grid_to_snap.x) / grid_to_snap.x;
 	VERTEX.y = floor(VERTEX.y * grid_to_snap.y) / grid_to_snap.y;
 	VERTEX *= w_comp;
-	
+
 	if(affine_mapping == true){
 		UV *= w_comp;
 	}
-	
+
 	//IMPORTANT NOTE: Make sure `NORMAL`s are transformed out of local space aswell.
 	NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
 }
@@ -58,10 +58,10 @@ void fragment() {
 	if(affine_mapping == true){
 		base_uv /= w_comp;
 	}
-	
+
 	vec4 color_base = COLOR;
 	vec4 texture_color = texture(texture_albedo, base_uv);
-	
+
 	ALBEDO = albedo.rgb * texture_color.rgb;
 	ALPHA = texture_color.a * color_base.a;
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor;

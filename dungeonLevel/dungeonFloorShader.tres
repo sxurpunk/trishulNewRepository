@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://rdykc5krefwt"]
+
+[ext_resource type="Shader" uid="uid://bj61awdw1lpr8" path="res://shaders/Jitter.gdshader" id="1_nj8ws"]
+[ext_resource type="Texture2D" uid="uid://crm1nvnq611on" path="res://dungeonLevel/dungeon-Environment_dungeonTexture.png" id="2_0rihj"]
+
+[resource]
+resource_name = "brick"
+render_priority = 0
+shader = ExtResource("1_nj8ws")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_0rihj")
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.5
