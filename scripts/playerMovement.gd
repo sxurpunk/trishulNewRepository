@@ -9,8 +9,9 @@ extends CharacterBody3D
 @onready var enemyScript = $"../enemy"
 
 @onready var target = $"."
+@onready var healthLabel: Label = $"../CanvasLayer/Label"
 
-var health = 500
+var playerHealth = 500
 var SPEED = 5.0
 var projectileCost = 0.0
 const JUMP_VELOCITY = 3
@@ -48,7 +49,7 @@ enum playerStates {MOVE, JUMP, ATTACK}
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	health = 100
+	playerHealth = 500
 	# healthbar.init_health(health)
 
 #func _quitGame():
@@ -56,7 +57,7 @@ func _ready():
 #		get_tree().quit()
 
 func _die():
-	if health <= 0 || Input.is_action_just_pressed("die"):
+	if playerHealth <= 0 || Input.is_action_just_pressed("die"):
 		isLocked = true
 		animation_player.play("death")
 	elif isPlayerDead == 1:
@@ -87,7 +88,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-
+	healthLabel.text = str(playerHealth)
+	
 	match currentState:
 		playerStates.MOVE:
 			move(delta)
