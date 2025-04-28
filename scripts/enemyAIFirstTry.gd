@@ -9,12 +9,16 @@ extends CharacterBody3D
 
 @onready var animation_player: AnimationPlayer = $bull_enemy/AnimationPlayer
 
+@onready var damageIndicator: Sprite2D = $"../CanvasLayer/Ff0000"
+
 var isLocked = false
 
 var enemySpeed = 0.75
 var gravity = 9.8
 var health = 100
 
+func _ready():
+	damageIndicator.self_modulate.a = 0.25
 
 func _process(delta):
 	if not is_on_floor():
@@ -51,9 +55,6 @@ func attackPlayer():
 	animation_player.play("attack")
 	isLocked = true
 
-func doDamage():
-	playerScript.playerHealth -= 50
-	print("doing damage")
 
 func moveToPlayer(delta:float):
 	if playerScript != null && !isLocked:
@@ -68,3 +69,15 @@ func _on_attackTrigger_entered(body: Node3D) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
 		playerScript = body
+
+func _on_hitbox_body_entered(body: Node3D) -> void:
+	if body is Player:
+		playerScript.playerHealth -= 50
+		showDamage()
+		print("doing damage")
+
+func showDamage():
+	damageIndicator.visible = true
+
+func hideDamage():
+	damageIndicator.visible = false

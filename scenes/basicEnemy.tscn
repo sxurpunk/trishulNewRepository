@@ -206,7 +206,7 @@ bind/56/bone = -1
 bind/56/pose = Transform3D(-99.9929, 1.01413, -0.594674, -0.793873, -20.9948, 97.7677, 0.866688, 97.766, 21.0015, -17.9584, -18.8497, 4.81418)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nxt13"]
-radius = 0.194667
+radius = 0.173353
 
 [sub_resource type="Animation" id="Animation_nxt13"]
 resource_name = "RESET"
@@ -562,11 +562,11 @@ tracks/47/path = NodePath("..")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
-"times": PackedFloat32Array(0.866667),
+"times": PackedFloat32Array(1.13333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"doDamage"
+"method": &"hideDamage"
 }]
 }
 tracks/48/type = "value"
@@ -2066,5 +2066,8 @@ shape = SubResource("SphereShape3D_j0e3d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153831, -0.177158, 0)
 shape = SubResource("CapsuleShape3D_d1kie")
 
+[connection signal="area_entered" from="bull_enemy/Armature_003/Skeleton3D/BoneAttachment3D/hitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="bull_enemy/Armature_003/Skeleton3D/BoneAttachment3D/hitBox" to="." method="_on_hitbox_body_entered"]
+[connection signal="script_changed" from="bull_enemy/Armature_003/Skeleton3D/BoneAttachment3D/hitBox/CollisionShape3D" to="." method="_on_collision_shape_3d_script_changed"]
 [connection signal="body_entered" from="bull_enemy/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="bull_enemy/attackTrigger" to="." method="_on_attackTrigger_entered"]

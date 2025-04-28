@@ -6,6 +6,9 @@ extends CharacterBody3D
 @onready var visuals: Node3D = $visuals
 # @onready var healthbar = $CanvasLayer/Healthbar
 
+@onready var damageIndicator: Sprite2D = $"../CanvasLayer/Ff0000"
+
+
 @onready var enemyScript = $"../enemy"
 
 @onready var target = $"."
@@ -51,6 +54,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	playerHealth = 500
 	# healthbar.init_health(health)
+	damageIndicator.self_modulate.a = 0.25
 
 #func _quitGame():
 #	if Input.is_action_pressed("quit"):
@@ -72,7 +76,17 @@ func _input(event):
 		rotate_y(deg_to_rad(-event.relative.x*horizontalSens))
 		camera_holder.rotate_x(deg_to_rad(-event.relative.y*verticalSens))
 		camera_holder.rotation.x = clamp(camera_holder.rotation.x, deg_to_rad(-40), deg_to_rad(35))
-		
+	
+	if Input.is_action_pressed("cameraUp"):
+		camera_holder.rotate_x(0.1)
+	elif Input.is_action_pressed("cameraDown"):
+		camera_holder.rotate_x(-0.1)
+	elif Input.is_action_pressed("cameraLeft"):
+		camera_holder.rotate_y(0.1) 
+	elif Input.is_action_pressed("cameraRight"):
+		camera_holder.rotate_y(-0.1)
+	
+	
 	# Handle jump.
 #		if Input.is_action_just_pressed("playerJump") and is_on_floor():
 #			currentState = playerStates.JUMP
