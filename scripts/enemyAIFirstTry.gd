@@ -59,7 +59,7 @@ func attackPlayer():
 func moveToPlayer(delta:float):
 	if playerScript != null && !isLocked:
 		self.global_position=lerp(self.global_position, playerScript.global_position, enemySpeed * delta)
-#		visuals.look_at(playerScript.global_position, Vector3(0, 1, 0))
+#		visuals.look_at(playerScript.global_position)
 		animation_player.play("walk")
 
 func _on_attackTrigger_entered(body: Node3D) -> void:

@@ -12,6 +12,8 @@ const FX_BUS = "FX"
 
 var volume = -80
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func FocusEntered():
 	FocusPlayer.play()
