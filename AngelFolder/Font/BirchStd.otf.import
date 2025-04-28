@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bkiga6cr523aq"
-path="res://.godot/imported/BirchStd.otf-16fff64b540a439193f26b89a6587cf8.fontdata"
+path="res://.godot/imported/BirchStd.otf-1ae18924f5112f8eb527bf35cf16ecf8.fontdata"
 
 [deps]
 
-source_file="res://angelFolder/Font/BirchStd.otf"
-dest_files=["res://.godot/imported/BirchStd.otf-16fff64b540a439193f26b89a6587cf8.fontdata"]
+source_file="res://AngelFolder/Font/BirchStd.otf"
+dest_files=["res://.godot/imported/BirchStd.otf-1ae18924f5112f8eb527bf35cf16ecf8.fontdata"]
 
 [params]
 

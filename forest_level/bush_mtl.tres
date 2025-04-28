@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b3vxx7of64t3a" path="res://forest_level/ForestRework_bushTexture.png" id="1_l6orr"]
 
 [resource]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_l6orr")
 metallic_specular = 0.0

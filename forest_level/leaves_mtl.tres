@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bbia6aqu6h5o5" path="res://forest_level/leavesTransparent.png" id="1_31dop"]
 
 [resource]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_31dop")
 metallic_specular = 0.0
