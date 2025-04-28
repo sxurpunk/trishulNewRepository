@@ -263,6 +263,7 @@ bus = &"Music"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("9_2281b")]
+metadata/_edit_use_anchors_ = true
 
 [node name="enemy" parent="." instance=ExtResource("8_duvpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194803, 1, -24.6031)
