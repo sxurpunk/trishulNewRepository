@@ -48,6 +48,10 @@ func attackPlayer():
 	animation_player.play("enemyAttack")
 	isLocked = true
 
+func doDamage():
+	playerScript.health -= 25
+	print("doing damage")
+
 func moveToPlayer(delta:float):
 	if playerScript != null:
 		self.global_position=lerp(self.global_position, playerScript.global_position, enemySpeed * delta)

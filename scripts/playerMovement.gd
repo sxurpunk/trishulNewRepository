@@ -10,7 +10,7 @@ extends CharacterBody3D
 
 @onready var target = $"."
 
-var health = 0
+var health = 500
 var SPEED = 5.0
 var projectileCost = 0.0
 const JUMP_VELOCITY = 3
@@ -28,6 +28,8 @@ var isRunning = false
 var isLocked = false
 
 var readyForInput = false
+
+var isPlayerDead : int = 0
 
 @export var horizontalSens = 0.5
 @export var verticalSens = 0.5
@@ -54,10 +56,15 @@ func _ready():
 #		get_tree().quit()
 
 func _die():
-	if Input.is_action_pressed("die"):
+	if health == 0:
 		isLocked = true
 		animation_player.play("death")
-		print("unity")
+	elif isPlayerDead == 1:
+		animation_player.play("stayDead")
+		isLocked = true
+
+func _addDeath():
+	isPlayerDead = 1
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -73,12 +80,13 @@ func _input(event):
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("shoot"):
-		_shoot_projectile()
+#	if Input.is_action_just_pressed("shoot"):
+#		_shoot_projectile()
 	
 		# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
 
 	match currentState:
 		playerStates.MOVE:
@@ -213,13 +221,13 @@ func _on_hitbox_body_entered(body: Node3D) -> void:
 		body.hurt()
 		projectileCost += 25
 
-func _shoot_projectile():
-	if projectileCost > 100:
-		visuals.look_at(position + direction)
-		var projectile_node = PROJECTILE_SCENE.instantiate()
-		get_parent().add_child(projectile_node)
-		projectile_node.global_position = marker_3d.global_position
-		resetProjectile()
+#func _shoot_projectile():
+#	if projectileCost > 100:
+#		visuals.look_at(position + direction)
+#		var projectile_node = PROJECTILE_SCENE.instantiate()
+#		get_parent().add_child(projectile_node)
+#		projectile_node.global_position = marker_3d.global_position
+#		resetProjectile()
 
 #func _on_area_3d_body_entered(body: Node3D) -> void:
 #	if body is enemy:
