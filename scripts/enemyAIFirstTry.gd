@@ -1,17 +1,18 @@
 class_name enemy
 extends CharacterBody3D
 
-@onready var nav = $NavigationAgent3D
+@onready var nav = $bull_enemy/NavigationAgent3D
 
 @onready var playerScript
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $bull_enemy/AnimationPlayer
 
 var isLocked = false
 
-var enemySpeed = 1.5
+var enemySpeed = 0.75
 var gravity = 9.8
 var health = 100
+
 
 func _process(delta):
 	if not is_on_floor():
@@ -45,7 +46,7 @@ func target_position(target):
 	nav.target_position = target
 
 func attackPlayer():
-	animation_player.play("enemyAttack")
+	animation_player.play("attack")
 	isLocked = true
 
 func doDamage():
@@ -55,6 +56,7 @@ func doDamage():
 func moveToPlayer(delta:float):
 	if playerScript != null:
 		self.global_position=lerp(self.global_position, playerScript.global_position, enemySpeed * delta)
+		animation_player.play("walk")
 
 func _on_attackTrigger_entered(body: Node3D) -> void:
 	if body is Player:
