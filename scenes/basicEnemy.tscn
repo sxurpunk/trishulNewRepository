@@ -208,6 +208,21 @@ bind/56/pose = Transform3D(-99.9929, 1.01413, -0.594674, -0.793873, -20.9948, 97
 [sub_resource type="SphereShape3D" id="SphereShape3D_nxt13"]
 radius = 0.194667
 
+[sub_resource type="Animation" id="Animation_nxt13"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature_003/Skeleton3D/BoneAttachment3D/hitBox/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_422at"]
 resource_name = "attack"
 length = 2.54167
@@ -540,6 +555,32 @@ tracks/46/path = NodePath("Armature_003/Skeleton3D:mixamorig_RightFoot")
 tracks/46/interp = 0
 tracks/46/loop_wrap = true
 tracks/46/keys = PackedFloat32Array(0, 1, 0.688015, -0.00306546, -0.00184294, 0.725688)
+tracks/47/type = "method"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("..")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"doDamage"
+}]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("Armature_003/Skeleton3D/BoneAttachment3D/hitBox/CollisionShape3D:disabled")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0, 0.835359, 1.00296),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_dnmlr"]
 resource_name = "base"
@@ -1542,9 +1583,6 @@ tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = PackedFloat32Array(0, 1, 0.526087, -0.0192978, 0.011942, 0.850128, 0.333333, 1, 0.526087, -0.0192977, 0.011942, 0.850128, 0.366667, 1, 0.536868, -0.0183061, 0.0110943, 0.843395, 0.4, 1, 0.560254, -0.0161163, 0.00922517, 0.828113, 0.433333, 1, 0.592369, -0.0130178, 0.00658633, 0.805535, 0.466667, 1, 0.629265, -0.00931614, 0.00344302, 0.777128, 0.5, 1, 0.66716, -0.00533877, 7.63378e-05, 0.744895, 0.533333, 1, 0.70036, -0.00168925, -0.00300309, 0.713782, 0.566667, 1, 0.725679, 0.00121139, -0.00544402, 0.688011, 0.6, 1, 0.741205, 0.00304587, -0.00698474, 0.671236, 0.633333, 1, 0.745452, 0.00355561, -0.00741244, 0.666509, 0.666667, 1, 0.736928, 0.002536, -0.00655675, 0.675935, 0.7, 1, 0.714231, -0.000113541, -0.0043298, 0.699897, 0.733333, 1, 0.683939, -0.00351493, -0.00146376, 0.729529, 0.766667, 1, 0.648415, -0.00732975, 0.00176023, 0.761249, 0.8, 1, 0.610563, -0.0112122, 0.00505191, 0.791872, 0.833333, 1, 0.573864, -0.0148165, 0.0081173, 0.818776, 0.866667, 1, 0.546489, -0.0174118, 0.0103305, 0.837222, 0.9, 1, 0.531488, -0.0188023, 0.0115184, 0.846779, 0.933333, 1, 0.526087, -0.0192977, 0.011942, 0.850128, 1.33333, 1, 0.526087, -0.0192978, 0.011942, 0.850128)
 
-[sub_resource type="Animation" id="Animation_nxt13"]
-resource_name = "RESET"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pryh1"]
 _data = {
 &"RESET": SubResource("Animation_nxt13"),
@@ -1563,9 +1601,10 @@ albedo_texture = ExtResource("2_j0e3d")
 radius = 9.2102
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j0e3d"]
-radius = 1.10867
+radius = 0.945954
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1kie"]
+radius = 0.39949
 height = 2.1272
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
@@ -1605,7 +1644,7 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(1, -1.91194e-09, -1.13886e-10, 1.91194e-09, 1, 1.11759e-08, 1.13886e-10, -1.11759e-08, 1, -1.55696e-08, 15.9104, -1.1921e-06)
 bones/3/enabled = true
 bones/3/position = Vector3(-1.55696e-08, 15.9104, -1.1921e-06)
-bones/3/rotation = Quaternion(1.80813e-27, -5.69432e-11, 9.55971e-10, 1)
+bones/3/rotation = Quaternion(1.33962e-25, -5.69432e-11, 9.55971e-10, 1)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "mixamorig_Neck"
 bones/4/parent = 3
@@ -1639,8 +1678,8 @@ bones/8/name = "mixamorig_LeftArm"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.99877, 0.0488213, -0.00870409, -0.0495911, 0.983265, -0.175302, -2.70084e-08, 0.175518, 0.984476, 2.38419e-07, 17.6795, 2.12193e-05)
 bones/8/enabled = true
-bones/8/position = Vector3(8.25871e-07, 17.6796, 3.00659e-07)
-bones/8/rotation = Quaternion(0.0870336, -0.0136751, 0.105626, 0.990495)
+bones/8/position = Vector3(8.25871e-07, 17.6796, 3.00657e-07)
+bones/8/rotation = Quaternion(0.0870336, -0.0136751, 0.105626, 0.990496)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "mixamorig_LeftForeArm"
 bones/9/parent = 8
@@ -1787,7 +1826,7 @@ bones/29/parent = 28
 bones/29/rest = Transform3D(0.999631, 0.0269455, -0.00329837, -0.0271466, 0.992223, -0.121473, -4.36208e-07, 0.121518, 0.992589, -3.8147e-06, 35.6117, -2.86102e-06)
 bones/29/enabled = true
 bones/29/position = Vector3(-5.6967e-06, 35.6117, -6.84943e-06)
-bones/29/rotation = Quaternion(0.057788, 0.0191295, -0.339281, 0.938714)
+bones/29/rotation = Quaternion(0.057788, 0.0191295, -0.339281, 0.938713)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/name = "mixamorig_RightHand"
 bones/30/parent = 29
@@ -1984,14 +2023,15 @@ mesh = SubResource("ArrayMesh_owhmv")
 skin = SubResource("Skin_30rbr")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="bull_enemy/Armature_003/Skeleton3D"]
-transform = Transform3D(0.44639, 0.207732, 0.870393, 0.475154, 0.769201, -0.427269, -0.758264, 0.6043, 0.244659, -25.9676, 55.6067, -111.458)
+transform = Transform3D(0.44639, 0.207732, 0.870393, 0.475154, 0.769201, -0.427269, -0.758264, 0.604299, 0.244659, -25.9676, 55.6067, -111.458)
 bone_name = "mixamorig_RightHand"
 bone_idx = 30
 
 [node name="hitBox" type="Area3D" parent="bull_enemy/Armature_003/Skeleton3D/BoneAttachment3D"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 1.90735e-05, 0, 7.62939e-06, 100, 0, -7.62939e-06, -3.8147e-06, 100, 2.55858, 9.67093, 1.19475)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bull_enemy/Armature_003/Skeleton3D/BoneAttachment3D/hitBox"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, -2.98023e-08, 1.3, 0, 0, 0)
 shape = SubResource("SphereShape3D_nxt13")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="bull_enemy"]
@@ -2023,7 +2063,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203886, 0)
 shape = SubResource("SphereShape3D_j0e3d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0128526, -0.177158, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153831, -0.177158, 0)
 shape = SubResource("CapsuleShape3D_d1kie")
 
 [connection signal="body_entered" from="bull_enemy/Area3D" to="." method="_on_area_3d_body_entered"]
