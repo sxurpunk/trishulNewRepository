@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dccl82y1aa5tw" path="res://forest_level/ForestRework_LightShaft.png" id="13_lu5l0"]
 [ext_resource type="Texture2D" uid="uid://dnfwjqcwcnkok" path="res://forest_level/forestEntrance_DoorTexture.png" id="16_3fk48"]
 [ext_resource type="Texture2D" uid="uid://crm1nvnq611on" path="res://dungeonLevel/dungeon-Environment_dungeonTexture.png" id="17_pbbxs"]
-[ext_resource type="PackedScene" uid="uid://dpan4dm8402w5" path="res://AngelFolder/Scenes/pause_menu.tscn" id="19_nt46a"]
+[ext_resource type="PackedScene" uid="uid://dpan4dm8402w5" path="res://angelFolder/Scenes/pause_menu.tscn" id="19_nt46a"]
 [ext_resource type="PackedScene" uid="uid://mjcyu5rlgtjj" path="res://scenes/basicEnemy.tscn" id="20_7jea2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cwksl"]
