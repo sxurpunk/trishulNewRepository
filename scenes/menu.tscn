@@ -17,38 +17,46 @@ grow_vertical = 2
 script = ExtResource("1_0lujy")
 
 [node name="TrsihulmenuBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(513, 289)
-scale = Vector2(1.02588, 1.03385)
+position = Vector2(959.532, 542.126)
+scale = Vector2(1.89801, 1.91276)
 texture = ExtResource("2_3o45t")
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 269.0
-offset_top = 376.0
-offset_right = 724.0
-offset_bottom = 599.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 41.0
+offset_right = 232.0
+offset_bottom = 313.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TrishullOgo" type="Sprite2D" parent="MainMenu"]
 position = Vector2(229, -128)
-scale = Vector2(0.140323, 0.140323)
+scale = Vector2(0.215323, 0.215323)
 texture = ExtResource("2_q800x")
 
 [node name="Play" type="Button" parent="MainMenu"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Play"
 
 [node name="Settings" type="Button" parent="MainMenu"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Settings"
 
 [node name="Quit" type="Button" parent="MainMenu"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Quit"
 
 [node name="Settings" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
