@@ -116,14 +116,6 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Resume"
 
-[node name="Save" type="Button" parent="PanelContainer/PauseMenu"]
-layout_mode = 2
-text = "Save"
-
-[node name="Load" type="Button" parent="PanelContainer/PauseMenu"]
-layout_mode = 2
-text = "Load"
-
 [node name="Restart" type="Button" parent="PanelContainer/PauseMenu"]
 layout_mode = 2
 text = "Restart"
@@ -135,6 +127,16 @@ text = "Setting"
 [node name="Quit" type="Button" parent="PanelContainer/PauseMenu"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Save" type="Button" parent="PanelContainer/PauseMenu"]
+visible = false
+layout_mode = 2
+text = "Save"
+
+[node name="Load" type="Button" parent="PanelContainer/PauseMenu"]
+visible = false
+layout_mode = 2
+text = "Load"
 
 [node name="SaveMenu" type="VBoxContainer" parent="PanelContainer"]
 visible = false
@@ -180,9 +182,9 @@ libraries = {
 }
 
 [connection signal="pressed" from="PanelContainer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="PanelContainer/PauseMenu/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/PauseMenu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PanelContainer/PauseMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseMenu/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="PanelContainer/SaveMenu/Yes_Load" to="." method="_on_yes_load_pressed"]
 [connection signal="pressed" from="PanelContainer/SaveMenu/No_Load" to="." method="_on_no_load_pressed"]

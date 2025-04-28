@@ -30,3 +30,8 @@ func _on_master_volume_slider_drag_ended(value_changed: bool) -> void:
 func _on_sfx_volume_slider_drag_ended(value_changed: bool) -> void:
 	if value_changed:
 		ConfigFileHandler.save_audio_settings("sfx_volume", sfx_volume_slider.value / 100)
+
+
+func _on_button_pressed() -> void:
+	get_node("../PanelContainer").show()
+	queue_free()

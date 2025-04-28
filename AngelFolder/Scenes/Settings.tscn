@@ -159,6 +159,23 @@ theme_override_fonts/font = ExtResource("1_n31r1")
 theme_override_font_sizes/font_size = 35
 text = "Configure Keybinds"
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="MainSettings/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="MainSettings/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainSettings/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_flfri")
+theme_override_fonts/font = ExtResource("1_n31r1")
+theme_override_font_sizes/font_size = 20
+text = "Back"
+
 [connection signal="toggled" from="MainSettings/VBoxContainer/FullscreenCheck" to="." method="_on_fullscreen_check_toggled"]
 [connection signal="drag_ended" from="MainSettings/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
 [connection signal="drag_ended" from="MainSettings/VBoxContainer/HBoxContainer2/SfxVolumeSlider" to="." method="_on_sfx_volume_slider_drag_ended"]
+[connection signal="pressed" from="MainSettings/VBoxContainer/HBoxContainer4/Button" to="." method="_on_button_pressed"]

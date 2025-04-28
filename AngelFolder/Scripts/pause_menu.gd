@@ -37,7 +37,10 @@ func _on_restart_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	var settings = load("res://AngelFolder/Scenes/Settings.tscn")
+	var new_settings = settings.instantiate()
+	add_child(new_settings)
+	$PanelContainer.hide()
 
 
 func _on_quit_pressed() -> void:
