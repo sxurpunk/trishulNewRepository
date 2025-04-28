@@ -56,7 +56,7 @@ func _ready():
 #		get_tree().quit()
 
 func _die():
-	if health == 0:
+	if health <= 0 || Input.is_action_just_pressed("die"):
 		isLocked = true
 		animation_player.play("death")
 	elif isPlayerDead == 1:
