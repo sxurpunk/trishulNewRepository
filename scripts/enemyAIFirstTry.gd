@@ -5,6 +5,8 @@ extends CharacterBody3D
 
 @onready var playerScript
 
+@onready var visuals: Node3D = $bull_enemy/Armature_003
+
 @onready var animation_player: AnimationPlayer = $bull_enemy/AnimationPlayer
 
 var isLocked = false
@@ -54,8 +56,9 @@ func doDamage():
 	print("doing damage")
 
 func moveToPlayer(delta:float):
-	if playerScript != null:
+	if playerScript != null && !isLocked:
 		self.global_position=lerp(self.global_position, playerScript.global_position, enemySpeed * delta)
+#		visuals.look_at(playerScript.global_position, Vector3(0, 1, 0))
 		animation_player.play("walk")
 
 func _on_attackTrigger_entered(body: Node3D) -> void:
