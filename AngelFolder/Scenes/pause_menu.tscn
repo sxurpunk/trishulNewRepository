@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpan4dm8402w5"]
+[gd_scene load_steps=8 format=3 uid="uid://dpan4dm8402w5"]
 
 [ext_resource type="Shader" uid="uid://dn58ekj4ch65y" path="res://AngelFolder/pause_menu.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://v640tykh3vnf" path="res://AngelFolder/Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="Theme" uid="uid://dk1dr3uexl7ad" path="res://AngelFolder/Button/Default.tres" id="3_jrqq5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
@@ -114,28 +115,34 @@ size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="PanelContainer/PauseMenu"]
 layout_mode = 2
+theme = ExtResource("3_jrqq5")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/PauseMenu"]
 layout_mode = 2
+theme = ExtResource("3_jrqq5")
 text = "Restart"
 
 [node name="Settings" type="Button" parent="PanelContainer/PauseMenu"]
 layout_mode = 2
+theme = ExtResource("3_jrqq5")
 text = "Setting"
 
 [node name="Quit" type="Button" parent="PanelContainer/PauseMenu"]
 layout_mode = 2
+theme = ExtResource("3_jrqq5")
 text = "Quit"
 
 [node name="Save" type="Button" parent="PanelContainer/PauseMenu"]
 visible = false
 layout_mode = 2
+theme = ExtResource("3_jrqq5")
 text = "Save"
 
 [node name="Load" type="Button" parent="PanelContainer/PauseMenu"]
 visible = false
 layout_mode = 2
+theme = ExtResource("3_jrqq5")
 text = "Load"
 
 [node name="SaveMenu" type="VBoxContainer" parent="PanelContainer"]
