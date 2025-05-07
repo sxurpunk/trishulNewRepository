@@ -1879,6 +1879,15 @@ script = ExtResource("23_edxq8")
 transform = Transform3D(0.904045, 0, -0.427437, 0, 1, 0, 0.427437, 0, 0.904045, 427.258, 8.79111, 91.7874)
 shape = SubResource("BoxShape3D_edxq8")
 
+[node name="enemy6" parent="." instance=ExtResource("20_7jea2")]
+transform = Transform3D(2.22265, 0, 5.43912, 0, 5.87573, 0, -5.43912, 0, 2.22265, -186.75, 87.2211, -796.5)
+
+[node name="enemy7" parent="." instance=ExtResource("20_7jea2")]
+transform = Transform3D(2.22265, 0, 5.43912, 0, 5.87573, 0, -5.43912, 0, 2.22265, -186.75, 87.2211, -830.571)
+
+[node name="enemy8" parent="." instance=ExtResource("20_7jea2")]
+transform = Transform3D(2.22265, 0, 5.43912, 0, 5.87573, 0, -5.43912, 0, 2.22265, 233.219, 87.2211, -715.587)
+
 [connection signal="body_entered" from="MeshInstance3D/Area3D" to="MeshInstance3D" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="MeshInstance3D2/Area3D" to="MeshInstance3D2" method="_on_area_3d_body_entered"]
 
