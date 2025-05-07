@@ -51,10 +51,10 @@ func move(_delta):
 	input_dir = Input.get_vector("moveLeft", "moveRight", "moveForward", "moveBackward")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if Input.is_action_pressed("playerAttack") && is_on_floor():
-			if animation_player.current_animation != "kick":
-				animation_player.play("kick")
-				isLocked = true
+#	if Input.is_action_pressed("playerAttack") && is_on_floor():
+#			if animation_player.current_animation != "kick":
+#				animation_player.play("kick")
+#				isLocked = true
 	
 	if Input.is_action_pressed("playerRun"):
 		SPEED = walkSpeed
