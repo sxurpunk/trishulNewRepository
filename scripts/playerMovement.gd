@@ -8,7 +8,6 @@ extends CharacterBody3D
 
 @onready var damageIndicator: Sprite2D = $"../CanvasLayer/Ff0000"
 
-
 @onready var enemyScript = $"../enemy"
 
 @onready var target = $"."
@@ -18,6 +17,7 @@ var playerHealth = 500
 var SPEED = 5.0
 var projectileCost = 0.0
 const JUMP_VELOCITY = 3
+var killCount : int = 0
 
 @onready var marker_3d: Marker3D = $Marker3D
 const PROJECTILE_SCENE = preload("res://scenes/projectileScene.tscn")
@@ -79,6 +79,7 @@ func _input(event):
 	
 	if Input.is_action_pressed("cameraUp"):
 		camera_holder.rotate_x(0.1)
+		camera_holder.rotation.x = clamp(camera_holder.rotation.x, deg_to_rad(-40), deg_to_rad(35))
 	elif Input.is_action_pressed("cameraDown"):
 		camera_holder.rotate_x(-0.1)
 	elif Input.is_action_pressed("cameraLeft"):

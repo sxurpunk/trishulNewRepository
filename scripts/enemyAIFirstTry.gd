@@ -43,6 +43,7 @@ func _process(delta):
 	moveToPlayer(delta)
 
 func die():
+	playerScript.killCount += 1
 	queue_free()
 
 func hurt():
@@ -59,7 +60,10 @@ func attackPlayer():
 func moveToPlayer(delta:float):
 	if playerScript != null && !isLocked:
 		self.global_position=lerp(self.global_position, playerScript.global_position, enemySpeed * delta)
+#		var old_rot = self.rotation
 		self.look_at(playerScript.global_position)
+		#		self.rotation.y = old_rot.y
+		
 		animation_player.play("walk")
 
 func _on_attackTrigger_entered(body: Node3D) -> void:
