@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://dk1dr3uexl7ad"]
 
-[ext_resource type="FontFile" uid="uid://bkiga6cr523aq" path="res://angelFolder/Font/BirchStd.otf" id="1_hs0qa"]
+[ext_resource type="FontFile" uid="uid://bkiga6cr523aq" path="res://AngelFolder/Font/BirchStd.otf" id="1_hs0qa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxnl1"]
 content_margin_left = 4.0
