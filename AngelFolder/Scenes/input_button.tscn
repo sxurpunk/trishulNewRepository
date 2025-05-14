@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c76l3pi2faao7"]
 
-[ext_resource type="FontFile" uid="uid://bkiga6cr523aq" path="res://Font/BirchStd.otf" id="1_oe1bg"]
+[ext_resource type="FontFile" uid="uid://bkiga6cr523aq" path="res://AngelFolder/Font/BirchStd.otf" id="1_oe1bg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frp4k"]
 

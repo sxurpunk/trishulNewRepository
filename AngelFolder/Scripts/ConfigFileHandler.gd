@@ -6,13 +6,12 @@ const SETTINGS_FILE_PATH = "user://settings.ini"
 
 func _ready():
 	if !FileAccess.file_exists(SETTINGS_FILE_PATH):
-		config.set_value("keybinding", "move_left", "A")
-		config.set_value("keybinding", "move_right", "D")
-		config.set_value("keybinding", "move_forward", "W")
-		config.set_value("keybinding", "move_backward", "S")
-		config.set_value("keybinding", "attack", "mouse_1")
-		config.set_value("keybinding", "range_attack", "mouse_2")
-		config.set_value("keybinding", "interact", "E")
+		config.set_value("keybinding", "moveLeft", "A")
+		config.set_value("keybinding", "moveRight", "D")
+		config.set_value("keybinding", "moveForward", "W")
+		config.set_value("keybinding", "moveBackward", "S")
+		config.set_value("keybinding", "playerAttack", "mouse_1")
+		config.set_value("keybinding", "playerAttack2", "mouse_2")
 		
 		config.set_value("video", "fullscreen", true)
 		config.set_value("video", "fullscreen", false)
@@ -56,7 +55,7 @@ func save_keybinding(action: StringName, event: InputEvent):
 
 func load_keybindings():
 	var keybindings = {}
-	var keys = config.get_sections_keys("keybinding")
+	var keys = config.get_section_keys("keybinding")
 	for key in keys:
 		var input_event
 		var event_str = config.get_value("keybinding", key)

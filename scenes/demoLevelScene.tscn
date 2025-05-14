@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ge2a2cp311" path="res://healthbar/healthbar.tscn" id="6_1v2yv"]
 [ext_resource type="AudioStream" uid="uid://fvdmvswtn32m" path="res://audio/Dark Cave Music - Royalty Free Music   Underground Network.mp3" id="7_wdayi"]
 [ext_resource type="PackedScene" uid="uid://mjcyu5rlgtjj" path="res://scenes/basicEnemy.tscn" id="8_duvpt"]
-[ext_resource type="PackedScene" uid="uid://dpan4dm8402w5" path="res://angelFolder/Scenes/pause_menu.tscn" id="9_2281b"]
+[ext_resource type="PackedScene" uid="uid://dpan4dm8402w5" path="res://AngelFolder/Scenes/pause_menu.tscn" id="9_2281b"]
 [ext_resource type="Texture2D" uid="uid://b26jkvlw00uns" path="res://images/ff0000.png" id="9_p80f4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_r8ldg"]

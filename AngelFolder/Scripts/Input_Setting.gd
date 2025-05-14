@@ -8,13 +8,12 @@ var action_to_remap = null
 var remapping_button = null
 
 var input_actions = {
-	"move_forward": "Move forward",
-	"move_left": "Move left",
-	"move_backward": "Move backward",
-	"move_right": "Move right",
-	"attack": "Attack",
-	"range_attack": "Range attack",
-	"interact": "Interact"
+	"moveForward": "Move forward",
+	"moveLeft": "Move left",
+	"moveBackward": "Move backward",
+	"moveRight": "Move right",
+	"playerAttack": "Attack",
+	"playerAttack2": "Heavy attack",
 }
 
 func _ready():
@@ -92,6 +91,6 @@ func _on_reset_button_pressed() -> void:
 	InputMap.load_from_project_settings()
 	for action in input_actions:
 		var events = InputMap.action_get_events(action)
-		if event.size() > 0:
+		if events.size() > 0:
 			ConfigFileHandler.save_keybinding(action, events[0])
 	_create_action_list()
